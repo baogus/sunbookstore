@@ -54,13 +54,14 @@
 			<img alt="" src="img/customer.png" style="height:12%; width: 12%;">用户管理</a>
 	</div>
                <ul class="menu" style="display: none;">
-                    <li><a href="user/adduser.jsp" >增加用户</a></li>
+                	<li><a href="user/userlist.jsp">用户列表</a></li>
                         <br>
                     <li><a href="user/deluser.jsp">删除用户</a></li>
                         <br>
                     <li><a href="user/selectuser.jsp">查询用户</a></li>
-                        <br>
-                    <li><a href="user/updateuser.jsp">修改用户</a></li>
+                   		
+                   
+                   
                </ul>	
 </div>
 <br>
@@ -83,6 +84,18 @@
 </div>
 <br>
 <br>
+	<div class="title" >
+	
+		<a style="color:blue;cursor:pointer;">
+			<img alt="" src="img/category.png" style="height:12%; width: 12%;">分类管理</a>
+	</div>
+                <ul  class="menu"  style="display: none;">
+                    <li><a href="category/categorylist.jsp">分类列表</a></li>
+  
+				</ul>
+</div>
+<br>
+<br>
 
 <div>		
 	<div class="title" >
@@ -96,5 +109,6 @@
                     <li><a href="admin/updateadmin.jsp">修改密码</a></li>
 				</ul>
 </div>
+
 </body>
 </html>
