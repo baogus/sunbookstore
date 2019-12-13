@@ -11,50 +11,35 @@
     background-image:url('img/customer.png');
    background-size: 100% 100%;
    	}
+   	/* 去超链接的下划线 */
+   	a{
+   	text-decoration:none;
+   	
+   	}
 </style>
-
+    <!-- 引用jquery框架文件，这样脚本中就可以使用jquery了-->
+<script type="text/javascript" src="jquery/jquery-3.2.1.js"></script>
  <script type="text/javascript">
-        //默认隐藏的
-        var hide=true;
-       
-        //显示或者隐藏的函数
-        function displayOrHide1(){
-        	 var cityList=document.getElementById("cityList1");
-            if(hide){
-                //显示
-                cityList.style.display="block";
-                hide=false;
-            }else{
-                //隐藏
-                cityList.style.display="none";
-                hide=true;
-            }
-        }
-        function displayOrHide2(){
-            var cityList=document.getElementById("cityList2");
-            if(hide){
-                //显示
-                cityList.style.display="block";
-                hide=false;
-            }else{
-                //隐藏
-                cityList.style.display="none";
-                hide=true;
-            }
-        }
-        function displayOrHide3(){
-            var cityList=document.getElementById("cityList3");
-            if(hide){
-                //显示
-                cityList.style.display="block";
-                hide=false;
-            }else{
-                //隐藏
-                cityList.style.display="none";
-                hide=true;
-            }
-        }
-       
+     
+        $(function(){
+
+            //定义鼠标悬停事件
+            $(".menu li a").hover(function(){
+                $(this).addClass("hover");
+            },function(){
+                $(this).removeClass("hover");
+            });
+            //定义上滑事件
+            $(".title").click(function(){
+                var $ul=$(this).next("ul");
+                $("dd").find("ul").slideUp();
+                if ($ul.is(':visible')){
+                    $(this).next('ul').slideUp();
+                }else{
+                    $(this).next('ul').slideDown();
+                }
+            });
+        });       
         </script>   
 <base target="body">
 <meta charset="UTF-8">
@@ -63,46 +48,51 @@
 
 <body>
 <div>		
-	<nobr>
-	
-		<a style="color:blue;cursor:pointer;" onclick="displayOrHide1();">
+
+	<div class="title" >
+		<a style="color:blue;cursor:pointer;" >
 			<img alt="" src="img/customer.png" style="height:12%; width: 12%;">用户管理</a>
-	</nobr>
-                <ul id="cityList1" style="display: none;">
-                    <li><a href="user/adduser.jsp">增加用户</a></li>
+	</div>
+               <ul class="menu" style="display: none;">
+                    <li><a href="user/adduser.jsp" >增加用户</a></li>
+                        <br>
                     <li><a href="user/deluser.jsp">删除用户</a></li>
+                        <br>
                     <li><a href="user/selectuser.jsp">查询用户</a></li>
+                        <br>
                     <li><a href="user/updateuser.jsp">修改用户</a></li>
-                </ul>	
+               </ul>	
 </div>
 <br>
 <br>
 <div>
-	<nobr>
-	
-		 <a style="color:blue;cursor:pointer;" onclick="displayOrHide2();">
+	<div class="title" >
+		 <a style="color:blue;cursor:pointer;">
 		 	<img alt="" src="img/book.png" style="height:12%; width: 12%;">书籍管理</a>
-		 </nobr>
-                <ul id="cityList2" style="display: none;">
+	</div>
+                <ul class="menu" style="display: none;">
                     <li><a href="book/addbook.jsp">增加书籍</a></li>
+                        <br>
                     <li><a href="book/delbook.jsp">删除书籍</a></li>
+                        <br>
                     <li><a href="book/selectbook.jsp">查询书籍</a></li>
+                        <br>
                     <li><a href="book/updatebook.jsp">修改书籍</a></li>
                    
                 </ul>
-
 </div>
 <br>
 <br>
 
 <div>		
-	<nobr>
+	<div class="title" >
 	
-		<a style="color:blue;cursor:pointer;" onclick="displayOrHide3();">
+		<a style="color:blue;cursor:pointer;">
 			<img alt="" src="img/shezhi.png" style="height:12%; width: 12%;">系统设置</a>
-			</nobr>
-                <ul id="cityList3" style="display: none;">
+	</div>
+                <ul  class="menu"  style="display: none;">
                     <li><a href="admin/selectadmin.jsp">查看信息</a></li>
+                    <br>
                     <li><a href="admin/updateadmin.jsp">修改密码</a></li>
 				</ul>
 </div>

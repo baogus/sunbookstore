@@ -40,10 +40,10 @@
 		</td>
 	</tr>
 	<tr>
-		<td  style="padding:5px; width: 13%; height:85%" align="center" valign="top" class="left">
+		<td  style="padding:5px; width: 13%; height:85%; background-color: #BBFFEE;" align="center" valign="top" class="left">
 			<iframe frameborder="0" width="120" src="left.jsp" name="left"></iframe>
 		</td>
-		<td style="width: 87%; height:85%;"> 
+		<td style="width: 87%; height:85%; background-color:#7FFFD4 ;"> 
 			<iframe frameborder="0" src="body.jsp" name="body"></iframe>
 		</td>
 	</tr>
