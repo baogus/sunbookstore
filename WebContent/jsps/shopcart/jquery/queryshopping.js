@@ -24,12 +24,14 @@ function shopCar(){
 	for(let i=0;i<jsonStrings.length;i++){
 		var jsonValue=JSON.parse(jsonStrings[i].value);
 		var row=tbody.insertRow(i);
-		row.insertCell(0).innerHTML="<input type='checkbox' name='checkProduct' value='"+jsonStrings[i].key+"' onchange='calcuCost()'/>";
-		row.insertCell(1).innerHTML="<img src='"+jsonValue.img+"' width='50px' height='50'/>";
+		row.insertCell(0).innerHTML="<input type='checkbox' name='checkBook' value='"+jsonStrings[i].key+"' onchange='calcCost()'/>";
+		row.insertCell(1).innerHTML="<img src='"+jsonValue.img+"' width='50px' height='50px'/>";
 		row.insertCell(2).innerHTML=jsonValue.name;
 		row.insertCell(3).innerHTML=jsonValue.price;
-		row.insertCell(4).innerHTML="<input type='number' name='number' min='1' max='10' value='"+jsonValue.amount+"' onchange='amountChange(this)'/>"
-		row.insertCell(5).innerHTML="<button name='delete' onclick='deleteTr(this)'>删除</button>";
+		row.insertCell(4).innerHTML="<input type='number' name='number' min='1' max='10' value='"+jsonValue.amount+"' onchange='amountChange(this)'/>";
+		row.insertCell(5).innerHTML=jsonValue.Discount;
+		row.insertCell(6).innerHTML=jsonValue.price*vjsonValue.Discount;
+		row.insertCell(7).innerHTML="<button name='delete' onclick='deleteTr(this)'>删除</button>";
 	}
 	calcCost();
 }
