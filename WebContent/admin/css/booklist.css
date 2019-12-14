@@ -1,0 +1,18 @@
+
+
+   .input{
+      	width:25px;
+      	height: 25px
+      }
+       
+      .search{
+      	width:250px;
+      	height: 30px;
+      	background-color:#33FFFF;
+      	border-radius:12px;/* 变成圆角 */
+      
+      } 
+       	a{
+   	text-decoration:none;
+   	
+   	}	

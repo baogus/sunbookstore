@@ -1,46 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="req" value="${pageContext.request }"/>
+<c:set var="base" value="${req.scheme}://${req.serverName}:${req.serverPort}${req.contextPath }/"/>
 <!DOCTYPE html>
 <html>
 <head>
-<style type="text/css">
-.customer{
-	height:20px;
-    width:50px;
-    position:absolute;
-    background-image:url('img/customer.png');
-   background-size: 100% 100%;
-   	}
-   	/* 去超链接的下划线 */
-   	a{
-   	text-decoration:none;
-   	
-   	}
-</style>
-    <!-- 引用jquery框架文件，这样脚本中就可以使用jquery了-->
-<script type="text/javascript" src="jquery/jquery-3.2.1.js"></script>
- <script type="text/javascript">
-     
-        $(function(){
+    <base href="${base }">
 
-            //定义鼠标悬停事件
-            $(".menu li a").hover(function(){
-                $(this).addClass("hover");
-            },function(){
-                $(this).removeClass("hover");
-            });
-            //定义上滑事件
-            $(".title").click(function(){
-                var $ul=$(this).next("ul");
-                $("dd").find("ul").slideUp();
-                if ($ul.is(':visible')){
-                    $(this).next('ul').slideUp();
-                }else{
-                    $(this).next('ul').slideDown();
-                }
-            });
-        });       
-        </script>   
+    <!-- 引用jquery框架文件，这样脚本中就可以使用jquery了-->
+<script type="text/javascript" src="<c:url value='${base }admin/jquery/jquery-3.2.1.js'/>"></script>
+ <script type="text/javascript" src="<c:url value='${base }admin/js/select.js'/>"></script>
+  <link rel="stylesheet" href="<c:url value='${base }admin/css/left.css'/>" >
 <base target="body">
 <meta charset="UTF-8">
 <title>左边</title>
@@ -51,14 +22,13 @@
 
 	<div class="title" >
 		<a style="color:blue;cursor:pointer;" >
-			<img alt="" src="img/customer.png" style="height:12%; width: 12%;">用户管理</a>
+			<img alt="" src="<c:url value='${base }admin/img/customer.png'/>" style="height:12%; width: 12%;">用户管理</a>
 	</div>
                <ul class="menu" style="display: none;">
-                	<li><a href="user/userlist.jsp">用户列表</a></li>
+                	<li><a href="<c:url value='${base }admin/user/userlist.jsp'/>">用户列表</a></li>
                         <br>
-                    <li><a href="user/deluser.jsp">删除用户</a></li>
-                        <br>
-                    <li><a href="user/selectuser.jsp">查询用户</a></li>
+                  
+                  <!--   <li><a href="user/selectuser.jsp">查询用户</a></li> -->
                    		
                    
                    
@@ -69,16 +39,15 @@
 <div>
 	<div class="title" >
 		 <a style="color:blue;cursor:pointer;">
-		 	<img alt="" src="img/book.png" style="height:12%; width: 12%;">书籍管理</a>
+		 	<img alt="" src="<c:url value='${base }admin/img/book.png'/>" style="height:12%; width: 12%;">书籍管理</a>
 	</div>
                 <ul class="menu" style="display: none;">
-                    <li><a href="book/addbook.jsp">增加书籍</a></li>
+                    <li><a href="<c:url value='${base }admin/book/booklist.jsp'/>">书籍列表</a></li>
                         <br>
-                    <li><a href="book/delbook.jsp">删除书籍</a></li>
+                    <li><a href="<c:url value='${base }admin/book/addbook.jsp'/>">增加书籍</a></li>
                         <br>
-                    <li><a href="book/selectbook.jsp">查询书籍</a></li>
-                        <br>
-                    <li><a href="book/updatebook.jsp">修改书籍</a></li>
+                     <li><a href="<c:url value='${base }admin/book/updatebook.jsp'/>">修改库存</a></li>
+                  
                    
                 </ul>
 </div>
@@ -87,11 +56,11 @@
 	<div class="title" >
 	
 		<a style="color:blue;cursor:pointer;">
-			<img alt="" src="img/category.png" style="height:12%; width: 12%;">分类管理</a>
+			<img alt="" src="<c:url value='${base }admin/img/category.png'/>" style="height:12%; width: 12%;">分类管理</a>
 	</div>
                 <ul  class="menu"  style="display: none;">
-                    <li><a href="category/categorylist.jsp">分类列表</a></li>
-  
+                    <li><a href="<c:url value='${base }FindAllServlet'/>">分类列表</a></li>
+  					
 				</ul>
 </div>
 <br>
@@ -101,12 +70,11 @@
 	<div class="title" >
 	
 		<a style="color:blue;cursor:pointer;">
-			<img alt="" src="img/shezhi.png" style="height:12%; width: 12%;">系统设置</a>
+			<img alt="" src="<c:url value='${base }admin/img/shezhi.png'/>" style="height:12%; width: 12%;">系统设置</a>
 	</div>
                 <ul  class="menu"  style="display: none;">
-                    <li><a href="admin/selectadmin.jsp">查看信息</a></li>
-                    <br>
-                    <li><a href="admin/updateadmin.jsp">修改密码</a></li>
+                 
+                    <li><a href="<c:url value='${base }admin/admin/updateadmin.jsp'/>">修改密码</a></li>
 				</ul>
 </div>
 

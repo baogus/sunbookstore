@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>错误信息页</title>
 </head>
 <body>
-查询图书
+
 </body>
 </html>
