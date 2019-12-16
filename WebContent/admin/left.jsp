@@ -25,10 +25,10 @@
 			<img alt="" src="<c:url value='${base }admin/img/customer.png'/>" style="height:12%; width: 12%;">用户管理</a>
 	</div>
                <ul class="menu" style="display: none;">
-                	<li><a href="<c:url value='${base }admin/user/userlist.jsp'/>">用户列表</a></li>
-                        <br>
+                	<li><a href="<c:url value='${base }FindAllCustomerServlet?pc=1'/>">用户列表</a></li>
+                       
                   
-                  <!--   <li><a href="user/selectuser.jsp">查询用户</a></li> -->
+           
                    		
                    
                    
@@ -59,7 +59,7 @@
 			<img alt="" src="<c:url value='${base }admin/img/category.png'/>" style="height:12%; width: 12%;">分类管理</a>
 	</div>
                 <ul  class="menu"  style="display: none;">
-                    <li><a href="<c:url value='${base }FindAllServlet'/>">分类列表</a></li>
+                    <li><a href="<c:url value='${base }FindAllCategoryServlet?pc=1'/>">分类列表</a></li>
   					
 				</ul>
 </div>

@@ -15,11 +15,22 @@
 </head>
 <body>
 <div class="top" id="top">
-	<p>欢迎光临<br>张三管理员先生</p>
 	
-	 	<form action="" >
+<c:choose>
+	<c:when test="${empty sessionScope.manager }">
+		<form action="<c:url value='${base }admin/admin/login.jsp'/>" >
+	 		<input type="submit" value="登录" class="btn1">
+	 	</form>
+	 </c:when>
+	<c:otherwise>
+	<p>欢迎光临<br>${sessionScope.manager.mname }管理员先生</p>
+		<form action="<c:url value='${base }QuitServlet'/>" >
 	 		<input type="submit" value="退出登录" class="btn1">
 	 	</form>
+		
+	</c:otherwise>
+</c:choose>	
+
     
 	
 	

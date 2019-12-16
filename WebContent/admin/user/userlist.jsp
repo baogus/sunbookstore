@@ -12,12 +12,7 @@
  <script type="text/javascript" src="<c:url value='${base }admin/jquery/jquery-3.2.1.js'/>"></script>
 <link type="text/css" rel="stylesheet" href="<c:url value='${base }admin/css/table.css'/>"/>
  <script type="text/javascript" src="<c:url value='${base }admin/js/table.js'/>"></script>
-<script>
-function msg(){
-	alert("删除成功！");
-}
 
-</script>
 </head>
 <body>
 <div>
@@ -33,7 +28,7 @@ function msg(){
 <br>
 <br>
     <form id="form1" runat="server">
-   
+   <p>${msg }</p>
     <table width="100%" id="ListArea" border="0" class="t1" align="center" cellpadding="0"
         cellspacing="0">
         <tr align="center">
@@ -53,25 +48,75 @@ function msg(){
              <img src="<c:url value='${base }admin/img/caozuo.png'/>">     操作
             </th>
         </tr>
+ <c:forEach items="${pb.beanList }" var="customer">
+   		 
         <tr align="center">
             <td>
-                张三
+       ${customer.cname }
             </td>
             <td>
-                女
+       ${customer.csex }
+            </td>
+          <td>
+       ${customer.ctel }
             </td>
             <td>
-                14498723540
+       ${customer.caddress }
             </td>
             <td>
-                宁夏回族自治区银川市西夏区北方民族大学
+                <a href=" <c:url value='${base }DeleteCustomerServlet?cid=${customer.cid }'/>" >删除</a>
             </td>
-            <td>
-                <a href="" onclick="msg()">删除用户</a>
-            </td>
-        </tr>
-        
+        </tr>  
+   </c:forEach>
     </table>
+    </form>
+    第${pb.pc }页/共${pb.tp }页
+
+<a href="<c:url value='${base }FindAllCustomerServlet?pc=1'/>" >首页</a>
+<c:if test="${pb.pc > 1 }">
+<a href="<c:url value='${base }FindAllCustomerServlet?pc=${pb.pc-1}'/> " >上一页</a>
+</c:if>
+
+<%-- 计算begin、end --%>
+<c:choose>
+	<%-- 如果总页数不足10页，那么把所有的页数都显示出来！ --%>
+	<c:when test="${pb.tp <= 10 }">
+		<c:set var="begin" value="1" />
+		<c:set var="end" value="${pb.tp }" />
+	</c:when>
+	<c:otherwise>
+		<%-- 当总页数>10时，通过公式计算出begin和end --%>
+		<c:set var="begin" value="${pb.pc-5 }" />
+		<c:set var="end" value="${pb.pc+4 }" />	
+		<%-- 头溢出 --%>
+		<c:if test="${begin < 1 }">
+			<c:set var="begin" value="1" />
+			<c:set var="end" value="10" />
+		</c:if>	
+		<%-- 尾溢出 --%>
+		<c:if test="${end > pb.tp }">
+			<c:set var="begin" value="${pb.tp - 9 }" />
+			<c:set var="end" value="${pb.tp }" />
+		</c:if>	
+	</c:otherwise>
+</c:choose>
+<%-- 循环遍历页码列表 --%>
+<c:forEach var="i" begin="${begin }" end="${end }">
+	<c:choose>
+		<c:when test="${i eq pb.pc }">
+			[${i }]
+		</c:when>
+		<c:otherwise>
+			<a href="<c:url value='${base }FindAllCustomerServlet?pc=${i}'/>" >[${i }]</a>	
+		</c:otherwise>
+	</c:choose>
+	
+</c:forEach>
+
+<c:if test="${pb.pc < pb.tp }">
+<a href="<c:url value='${base }FindAllCustomerServlet?pc=${pb.pc+1}'/>" >下一页</a>
+</c:if>
+<a href="<c:url value='${base }FindAllCustomerServlet?pc=${pb.tp}'/>" >尾页</a>
     </form>
 </body>
 </html>

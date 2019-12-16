@@ -1,4 +1,4 @@
-package sunbookstore.customer.dao;
+package sunbookstore.customer.domain;
 
 public class Customer {
 	private int cid;
@@ -15,6 +15,24 @@ public class Customer {
 		this.ctel = ctel;
 		this.caddress = caddress;
 	}
+	
+	public Customer(String cname, String csex, String ctel, String caddress) {
+	
+		this.cname = cname;
+		this.csex = csex;
+		this.ctel = ctel;
+		this.caddress = caddress;
+	}
+
+	public Customer(int cid, String cname, String csex, String ctel, String caddress) {
+	
+		this.cid = cid;
+		this.cname = cname;
+		this.csex = csex;
+		this.ctel = ctel;
+		this.caddress = caddress;
+	}
+
 	public Customer() {
 		
 	}

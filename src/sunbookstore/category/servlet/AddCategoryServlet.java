@@ -28,17 +28,17 @@ public class AddCategoryServlet extends HttpServlet {
 		Map<String , String >errors = new HashMap<String, String>();
 		if(cgname==null||cgname.trim().isEmpty()) {
 			errors.put("error", " 分类不能为空！" );
-			request.setAttribute("error", errors);
-			request.getRequestDispatcher("FindAllServlet").forward(request, response);
+			request.setAttribute("errors", errors);
+			request.getRequestDispatcher("/FindAllCategoryServlet?pc=1").forward(request, response);
 			}else {
 		try {
 			categoryService.addCategory(cgname);
 			request.setAttribute("msg","添加成功！");
-			request.getRequestDispatcher("FindAllServlet").forward(request, response);
+			request.getRequestDispatcher("/FindAllCategoryServlet?pc=1").forward(request, response);
 		} catch (UserException e) {
 			request.setAttribute("msg",e.getMessage());
 			request.setAttribute("cgname", cgname);
-			request.getRequestDispatcher("FindAllServlet").forward(request, response);
+			request.getRequestDispatcher("/FindAllCategoryServlet?pc=1").forward(request, response);
 		}
 	}
 	}
