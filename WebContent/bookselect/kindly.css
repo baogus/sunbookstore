@@ -1,8 +1,0 @@
-@CHARSET "UTF-8";
-*{padding:0;margin:0;}
-nav{border:1px solid #BCFF1D;font-size:12px;background:#D6FF8C url(../images/background.gif)
-no-repeat top left;float:left;height:128px;}
-nav ul{list-style:none;width:312px;margin:2px;}
-nav ul li{width:104px;float:left;height:45px;text-align:center;line-height:35px;}
-nav ul li a{background:url(../images/menu.gif) no-repeat;display:block;text-decoration:none;color:black;padding-left:18px;}
-nav ul li a:hover,nav ul li a:active{background-position:0px -55px;color:#ff3300;font-weight:bold;}
