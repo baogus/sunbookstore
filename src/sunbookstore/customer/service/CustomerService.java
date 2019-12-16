@@ -9,7 +9,7 @@ import sunbookstore.pageBean.PageBean;
 public class CustomerService {
 	CustomerDao customerDao = new CustomerDao();
 
-	/* 分页查询 */
+	/* 查询所有分页显示*/
 	public PageBean<Customer> findAllCustomer(int pc,int ps)throws SQLException{
 		return customerDao.findAllCustmoer(pc, ps);
 	}
@@ -18,5 +18,8 @@ public class CustomerService {
 	public int deleteCustomerByid(int cid) {
 		return customerDao.deleteCustomerById(cid);
 	}
-
+	/* 通过姓名模糊查询分页显示 */
+	public PageBean<Customer> selectLikeByname(int pc,int ps,String likeString)throws SQLException{
+		return customerDao.selectLikeByname(pc, ps,likeString);
+	}
 }

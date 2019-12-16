@@ -24,15 +24,14 @@
 </nobr>
 </form>
 <br>
-<br>
  <form id="form1" runat="server">
-   <p>${msg1.msg }</p>
+   <p>${msg1 }</p>
     <table width="100%" id="ListArea" border="0" class="t1" align="center" cellpadding="0"
         cellspacing="0">
         <tr align="center">
-            <th>
+         <%--    <th>
               <img src="<c:url value='${base }admin/img/num.png'/>" >  分类编号
-            </th>
+            </th> --%>
             <th>
               <img src="<c:url value='${base }admin/img/bookc.png'/>" > 分类名称
             </th>
@@ -43,9 +42,9 @@
    <c:forEach items="${pb.beanList }" var="category">
    		 
         <tr align="center">
-            <td>
+          <%--   <td>
        ${category.cgid } 
-            </td>
+            </td> --%>
             <td>
    		${category.cgname }
             </td>

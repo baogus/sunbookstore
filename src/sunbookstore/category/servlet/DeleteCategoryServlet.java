@@ -22,10 +22,10 @@ public class DeleteCategoryServlet extends HttpServlet {
 		int cgid = Integer.parseInt(request.getParameter("cgid"));
 		int count = categoryService.deleteById(cgid);
 		if (count>0) {
-			request.setAttribute("msg", "删除成功！");
+			request.setAttribute("msg1", "删除成功！");
 			
 		}else {
-		request.setAttribute("msg", "删除失败");
+		request.setAttribute("msg1", "删除失败");
 		}
 		
 		request.getRequestDispatcher("/FindAllCategoryServlet?pc=1").forward(request, response);

@@ -16,7 +16,7 @@
     		<property name="minPoolSize">4</property>
  	</default-config>
 	<!-- 命名配置，new ComboPooledDataSource("oralce-config")时，使用的就是这个配置 -->
-	<named-config name="oracle-config">
+	<named-config name="mysql-config">
 		<property name="jdbcUrl">jdbc:mysql://localhost:3306/mydb1</property>
 		<property name="driverClass">com.mysql.jdbc.Driver</property>
 		<property name="user">root</property>
