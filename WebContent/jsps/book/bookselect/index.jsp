@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<a href="/sunbookstore/SelectCategoryServlet">登录</a>
 </body>
 </html>
