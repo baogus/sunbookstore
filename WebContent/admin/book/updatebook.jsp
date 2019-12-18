@@ -17,7 +17,7 @@
 	<p align="center" style="color: #0066FF; font-style: oblique">修改图书信息</p>
 		<label><img src="<c:url value='${base }admin/img/addbooks.png'/>">书&nbsp;&nbsp;&nbsp;名: <input type="text" name="bname" readonly="readonly" value=""></label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
 		<label><img src="<c:url value='${base }admin/img/per.png'/>">作&nbsp;&nbsp;&nbsp;者: <input type="text" name="bauthor" readonly="readonly" value=""></label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-		<label><img src="<c:url value='${base }admin/img/price.png'/>">价&nbsp;&nbsp;&nbsp;格: <input type="text" name="bprice" readonly="readonly" value=""></label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+		<label><img src="<c:url value='${base }admin/img/price.png'/>">价&nbsp;&nbsp;&nbsp;格: <input type="text" name="bprice"  value=""></label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
 		<label><img src="<c:url value='${base }admin/img/bdiscount.png'/>">折&nbsp;&nbsp;&nbsp;扣: <input type="text" name="bdiscount" value="${book.bdiscount }"></label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
 		<label><img src="<c:url value='${base }admin/img/bcount.png'/>">数&nbsp;&nbsp;&nbsp;量: <input type="text" name="bcount" value=""></label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
 		<label><img src="<c:url value='${base }admin/img/bpub.png'/>">出版社:<input type="text" name="bpub" readonly="readonly" value=""></label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>

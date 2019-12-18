@@ -15,13 +15,13 @@
 </style>
 </head>
 <body>
-<form action="" style="background-color: #33FFAA; width: 300px;">
-	<input class="search" type="text" placeholder="请输入查询内容">
+<form action="<c:url value='${base }FindLikeBookServlet'/>" style="background-color: #33FFAA; width: 300px;">
+	<input class="search" type="text" placeholder="请输入查询内容"  name="string">
 	<input class="input" type="image" src="<c:url value='${base }admin/img/search.png'/>">
 
 </form>
 
-</div>
+
 <br>
 <br>
     <form id="form1" runat="server">
@@ -61,7 +61,7 @@
       <c:forEach items="${pb.beanList }" var="book"> 
         <tr align="center">
             <td>
-              <img src="<c:url value='/${book.bimage }'/>" style="width: 66px; height: 77px">
+              <img src="<c:url value='http://localhost:8080/${book.bimage }'/>" style="width: 66px; height: 77px">
             </td>
             <td>
        ${book.bname }
@@ -70,7 +70,7 @@
          ${book.bauthor }
             </td>
             <td>
-               ${book.bprice }
+             ${book.bprice }
            </td>
             <td>
              ${book.bdiscount }
@@ -83,9 +83,10 @@
            </td>
               <td>
        ${book.bpub }
+   
             </td>
              <td>
-         <a href="">删除</a>
+         <a href="<c:url value ='${base }DeleteBookById?bid=${book.bid }'/>">删除</a>
             </td>
         </tr>
  </c:forEach>

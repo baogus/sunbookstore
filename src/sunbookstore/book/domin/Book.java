@@ -27,7 +27,20 @@ public class Book {
 	public Book() {
 		
 	}
-	
+	public Book(String bname, String bauthor, double bprice, String bdesc, String bimage, String bpub,
+			int bcount,double bdiscount,int bid) {
+		
+		this.bname = bname;
+		this.bauthor = bauthor;
+		this.bprice = bprice;
+		this.bdesc = bdesc;
+		this.bimage = bimage;
+		this.bpub = bpub;
+		this.cgid = cgid;
+		this.bcount = bcount;
+		this.bdiscount = bdiscount;
+		this.bid= bid;
+	}
 	public Book(String bname, String bauthor, double bprice, String bdesc, String bimage, String bpub, int cgid,
 			int bcount,double bdiscount) {
 		
@@ -40,6 +53,7 @@ public class Book {
 		this.cgid = cgid;
 		this.bcount = bcount;
 		this.bdiscount = bdiscount;
+		
 	}
 	public Book(String bname, String bauthor, double bprice, String bdesc, String bimage, String bpub,
 			int bcount,double bdiscount) {
@@ -54,6 +68,7 @@ public class Book {
 		this.bcount = bcount;
 		this.bdiscount = bdiscount;
 	}
+	
 	public int getBid() {
 		return bid;
 	}

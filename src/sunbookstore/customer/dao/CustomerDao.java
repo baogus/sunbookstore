@@ -114,8 +114,10 @@ public class CustomerDao {
 		 * 得到tr总记录数
 		 */
 		conn = dataSource.getConnection();
-		String sql = "select count(*) from customer";
+		String sql = "select count(*) from customer where cname like ? or cname = ?";
 		pstm = conn.prepareStatement(sql);
+		pstm.setString(1, "%"+likeString+"%");
+		pstm.setString(2, "%"+likeString+"%");
 		rs = pstm.executeQuery();
 		while(rs.next()) {
 			tr = rs.getInt(1);
