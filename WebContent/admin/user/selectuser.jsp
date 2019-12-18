@@ -16,8 +16,9 @@
 <meta charset="UTF-8">
 </head>
 <body>
-
+<img src="/sunbookstore/img/addbooks.png">
 <center>
+
 	<form action="" >
 		<label><img src="../img/per.png">姓名: <input type="text" name="cname"></label><br>
 		<label><img src="../img/password.png">密码: <input type="password" name="cpassword"></label><br>

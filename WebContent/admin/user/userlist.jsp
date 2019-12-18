@@ -16,8 +16,9 @@
 </head>
 <body>
 <div>
-<form action="<c:url value='${base }SelectLikeBynameSerevlet?pc=1'/>" style="background-color: #33FFAA; width: 300px;">
-	<input class="search" type="text" placeholder="请输入查询的姓名" name="likeName">
+<form action="<c:url value='${base }SelectLikeBynameSerevlet'/>" style="background-color: #33FFAA; width: 300px;">
+	<input class="search" type="text" placeholder="请输入查询的内容" name="string">
+	<input class="search" type="text" name="pc" value="1" style="display: none;">
 	<input class="input" type="image" src="<c:url value='${base }admin/img/search.png'/>">
 
 </form>

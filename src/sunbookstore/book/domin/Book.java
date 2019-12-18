@@ -4,14 +4,15 @@ public class Book {
 	private int bid;
 	private String bname;
 	private String bauthor;
-	private int bprice;
+	private double bprice;
 	private String bdesc;
 	private String bimage;
 	private String bpub;
 	private int cgid;
 	private int bcount;
-	public Book(int bid, String bname, String bauthor, int bprice, String bdesc, String bimage, String bpub, int cgid,
-			int bcount) {
+	private double bdiscount;
+	public Book(int bid, String bname, String bauthor, double bprice, String bdesc, String bimage, String bpub,
+			int cgid, int bcount) {
 	
 		this.bid = bid;
 		this.bname = bname;
@@ -23,7 +24,12 @@ public class Book {
 		this.cgid = cgid;
 		this.bcount = bcount;
 	}
-	public Book(String bname, String bauthor, int bprice, String bdesc, String bimage, String bpub, int bcount) {
+	public Book() {
+		
+	}
+	
+	public Book(String bname, String bauthor, double bprice, String bdesc, String bimage, String bpub, int cgid,
+			int bcount,double bdiscount) {
 		
 		this.bname = bname;
 		this.bauthor = bauthor;
@@ -31,10 +37,22 @@ public class Book {
 		this.bdesc = bdesc;
 		this.bimage = bimage;
 		this.bpub = bpub;
+		this.cgid = cgid;
 		this.bcount = bcount;
+		this.bdiscount = bdiscount;
 	}
-	public Book() {
+	public Book(String bname, String bauthor, double bprice, String bdesc, String bimage, String bpub,
+			int bcount,double bdiscount) {
 		
+		this.bname = bname;
+		this.bauthor = bauthor;
+		this.bprice = bprice;
+		this.bdesc = bdesc;
+		this.bimage = bimage;
+		this.bpub = bpub;
+	
+		this.bcount = bcount;
+		this.bdiscount = bdiscount;
 	}
 	public int getBid() {
 		return bid;
@@ -54,10 +72,10 @@ public class Book {
 	public void setBauthor(String bauthor) {
 		this.bauthor = bauthor;
 	}
-	public int getBprice() {
+	public double getBprice() {
 		return bprice;
 	}
-	public void setBprice(int bprice) {
+	public void setBprice(double bprice) {
 		this.bprice = bprice;
 	}
 	public String getBdesc() {
@@ -90,5 +108,12 @@ public class Book {
 	public void setBcount(int bcount) {
 		this.bcount = bcount;
 	}
+	public double getBdiscount() {
+		return bdiscount;
+	}
+	public void setBdiscount(double bdiscount) {
+		this.bdiscount = bdiscount;
+	}
+	
 	
 }

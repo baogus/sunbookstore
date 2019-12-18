@@ -1,4 +1,4 @@
-package sunbookstore.customer.servlet;
+package sunbookstore.book.servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -9,22 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import sunbookstore.customer.domain.Customer;
-import sunbookstore.customer.service.CustomerService;
+import sunbookstore.book.domin.Book;
+import sunbookstore.book.service.BookService;
 import sunbookstore.pageBean.PageBean;
 
 /**
- * Servlet implementation class SelectLikeBynameSerevlet
+ * Servlet implementation class FindAllBookServlet
  */
-@WebServlet("/SelectLikeBynameSerevlet")
-public class SelectLikeBynameSerevlet extends HttpServlet {
-	CustomerService customerService = new CustomerService();
-       
-  
+@WebServlet("/FindAllBookServlet")
+public class FindAllBookServlet extends HttpServlet {
+	BookService bookService = new BookService();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String pc1 = request.getParameter("pc");
-		String likeString = request.getParameter("string");
-		 if(pc1==null && pc1.trim().isEmpty()){ 
+		 if(pc1==null&& pc1.trim().isEmpty()){ 
 			 pc1="1";
 			 }
 		 int pc =Integer.parseInt(pc1);
@@ -32,15 +29,16 @@ public class SelectLikeBynameSerevlet extends HttpServlet {
 		 * int pc = 1;;//得到pc
 		 */	
 		 int ps = 10*pc;//给定ps的值，第页10行记录
-		PageBean<Customer> pb;
+		PageBean<Book> pb;
 		try {
-			pb = customerService.selectLikeByname(pc, ps,likeString);
+			pb = bookService.findAllBook(pc, ps);
 			request.setAttribute("pb", pb);//保存到request域中
-			request.getRequestDispatcher("/admin/user/userlist.jsp").forward(request, response);
+			request.getRequestDispatcher("/admin/book/booklist.jsp").forward(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}//传递pc, ps给Service，得到PageBean
+		
 	}
 
 	

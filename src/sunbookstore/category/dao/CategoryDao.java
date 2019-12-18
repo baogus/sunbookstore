@@ -190,4 +190,32 @@ public class CategoryDao {
 
 	}
 	
+	/* 通过分类名查询分类编号 */
+	public int findCategoryByName1(String name) {
+		int cgid = -1;
+		try {
+			conn = dataSource.getConnection();
+			String sql = "select cgid from category where cgname=?";
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, name);
+			rs= pstm.executeQuery();
+			while (rs.next()) {
+				cgid = rs.getInt(1);			
+			}
+			return cgid;		
+			
+		} catch (SQLException e) {		
+			e.printStackTrace();
+			return -1;
+		}finally {
+			try {
+				if(conn!=null)conn.close();
+				if(pstm!=null)pstm.close();
+				if(rs!=null)rs.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	}}
+	
 }

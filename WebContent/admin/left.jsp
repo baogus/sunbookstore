@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="<c:url value='${base }admin/css/left.css'/>" >
 <base target="body">
 <meta charset="UTF-8">
+
+
 <title>左边</title>
 </head>
 
@@ -39,14 +41,14 @@
 <div>
 	<div class="title" >
 		 <a style="color:blue;cursor:pointer;">
-		 	<img alt="" src="<c:url value='${base }admin/img/book.png'/>" style="height:12%; width: 12%;">书籍管理</a>
+		 	<img alt="" src="<c:url value='${base }admin/img/book.png'/>" style="height:12%; width: 12%;" >书籍管理</a>
 	</div>
                 <ul class="menu" style="display: none;">
-                    <li><a href="<c:url value='${base }admin/book/booklist.jsp'/>">书籍列表</a></li>
+                    <li><a href="<c:url value='${base }FindAllBookServlet?pc=1'/>">书籍列表</a></li>
                         <br>
-                    <li><a href="<c:url value='${base }admin/book/addbook.jsp'/>">增加书籍</a></li>
+                    <li><a href="<c:url value='${base }AdminBookCategoryServlet'/>" >增加书籍</a></li>
                         <br>
-                     <li><a href="<c:url value='${base }admin/book/updatebook.jsp'/>">修改库存</a></li>
+                     <li><a href="<c:url value='${base }admin/book/updatebook.jsp'/>">修改图书</a></li>
                   
                    
                 </ul>

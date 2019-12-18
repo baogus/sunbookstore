@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.swing.table.TableStringConverter;
+
 import exception.UserException;
 import sunbookstore.category.dao.CategoryDao;
 import sunbookstore.category.domain.Category;
@@ -39,6 +41,10 @@ public class CategoryService {
 		public PageBean<Category> selectAllCategory(int pc, int ps) throws SQLException {		
 			return categoryDao.findAllCategory(pc,ps);
 			
+		}
+		/* 查询所有分类 */
+		public int findCategoryByName1(String cgname) {
+			return categoryDao.findCategoryByName1(cgname);
 		}
 
 }

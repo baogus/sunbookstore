@@ -125,13 +125,12 @@ public class CustomerDao {
 		 * 得到beanList得到每页记录数
 		 */
 			/* oracle的分页查询语法 */
-		sql = "select cname,csex,ctel,caddress,cid from "
-				+ "( select cname,csex,ctel,caddress ,cid,rownum rn from customer where rownum<= ? order by cid ) "
-				+ "where rn >= ? and cname like ?";
+		sql = "select cname,csex,ctel,caddress,cid from ( select cname,csex,ctel,caddress ,cid,rownum rn from customer where rownum<= ? order by cid ) where rn >= ? and cname like ? or cname = ?";
 		pstm = conn.prepareStatement(sql);
 		pstm.setInt(1, ps);
 		pstm.setInt(2,(pc-1)*10);//设定每页十行记录数
 		pstm.setString(3, "%"+likeString+"%");
+		pstm.setString(4, "%"+likeString+"%");
 		rs = pstm.executeQuery();
 		while(rs.next()) {
 				/* int cid = rs.getInt(1); */
