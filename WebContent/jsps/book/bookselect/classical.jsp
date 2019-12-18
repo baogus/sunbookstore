@@ -1,23 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-  <style type="text/css">
-           a{
-				text-decoration:none
-			} 
-</style> 
+
 </head>
 <body>
- <table width="100%">
+<!--  <table width="100%">
   <tr>
    <td>
     <div>
        <a href="xminute.jsp" target="bottom">
-       <img src="images/xskdjs.jpg" width="200" height="200" /> </a> 
+       <img src="images/xskdjs937.jpg" width="200" height="200" /> </a> 
     </div>
     
     <div>
@@ -28,77 +25,35 @@
     </div>
     <div>
              价格：    
-    </div>
-    
-    
+    </div>    
    </td>   
-      <td>
-    <div>
-       <img src="images/ltxz.jpg" width="200" height="200" />
-    </div>
-    
-    <div>
-            书名:    
-    </div>
-    <div>
-           作者：        
-    </div>
-    <div>
-            价格：    
-    </div>
-   </td> 
-   
-    <td>
-    <div>
-       <img src="images/sjjs.jpg" width="200" height="200" />
-    </div>
-    
-    <div>
-            书名:     
-    </div>
-    <div>
-             作者：   
-    </div>
-    <div>
-             价格：    
-    </div>
-   </td> 
-   
-   
-      <td>
-    <div>
-       <img src="images/gqzdyz.jpg" width="200" height="200" />
-    </div>
-    
-    <div>
-              书名:     
-    </div>
-    <div>
-             作者：
-    </div>
-    <div>
-             价格：    
-    </div>
-   </td>   
- </tr>
-
- <tr>
+ </tr> -->
+  <table width="100%"> 
+   <c:forEach items="${books }" var="bookcategory">
+    <tr>
+      
    <td>
+
     <div>
-       <img src="images/gqzdyz.jpg" width="200" height="200" />
+       <a href="xminute.jsp" target="bottom" width="200" height="200">${bookcategory.bimage } </a> 
     </div>
     
     <div>
-             书名:    
+       <a href="xminute.jsp" target="bottom">${bookcategory.bname } </a>          
     </div>
     <div>
-             作者：
+         ${bookcategory.bauthor } 
     </div>
     <div>
-             价格：    
-    </div>
-   </td>
+         ${bookcategory.bprice }
+    </div>    
+   </td>   
  </tr>
+		
+	</c:forEach>
+				
+</table>    　
+
 
 </body>
 </html>

@@ -11,6 +11,23 @@ public class Book {
    private int bsum;
    private int bdiscount;
    private int bcid;
+public Book() {
+	// TODO Auto-generated constructor stub
+}
+public Book(int bid, String bname, String bauthor, int bprice, String bdesc, String bimage, String bpub, int bsum,
+		int bdiscount) {
+	super();
+	this.bid = bid;
+	this.bname = bname;
+	this.bauthor = bauthor;
+	this.bprice = bprice;
+	this.bdesc = bdesc;
+	this.bimage = bimage;
+	this.bpub = bpub;
+	this.bsum = bsum;
+	this.bdiscount = bdiscount;
+	this.bcid = bcid;
+}
 public int getBid() {
 	return bid;
 }

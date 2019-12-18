@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="/sunbookstore/SelectCategoryServlet">登录</a>
+<form action="/sunbookstore/SelectCategoryServlet">
+	<input type="submit">
+</form>
+<!-- <a href="/SelectCategoryServlet">登录</a> -->
 </body>
 </html>

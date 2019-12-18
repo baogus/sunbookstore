@@ -8,7 +8,7 @@
 	<head>
 	<meta charset="UTF-8">
 		<title>分类导航菜单</title>
-	<!-- 	<style type="text/css">
+		<style type="text/css">
 			*{
 				background: antiquewhite;
 				color: #02B1CB;
@@ -22,29 +22,16 @@
 				font-size:18px;
 				
 			}
-		</style> -->
+		</style>
 	</head>
 	<body>       
 　　　　　  <table> 
-				<%-- <c:forEach items="${requestScope.categories }" var="category">
+				<c:forEach items="${categories }" var="category">
 					<tr>
-					<td><a href="#" target="bottom">${category.cgname }</a></td>
+					<td><a href="FindBookByCategoryServlet?cgid=${category.cgid }" target="bottom">${category.cgname }</a></td>
 					</tr>
 				
-				</c:forEach> --%>
-				
-				<%
-				  	List<Category> list = (List<Category>)request.getAttribute("categories");
-				for(Category ca : list){
-					%>
-					
-					
-					<tr>
-					<td><a href="#" target="bottom"><%=ca.getCgname() %></a></td>
-					</tr>
-					<% 
-				}
-				%>
+				</c:forEach>
 				
 		</table>    　
 	</body>

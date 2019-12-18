@@ -1,12 +1,15 @@
 package sunbookstore.book.service;
 
+import java.util.List;
+
 import sunbookstore.book.dao.BookDao;
+import sunbookstore.book.domin.Book;
 
 public class BookService {
 	BookDao bookDao  = new BookDao();
 	
-	public int GetBookCGid() {
-		String cgname = null;
-		return bookDao.GetBookCGid(cgname);
+	
+	public List<Book> selectbook(int cgid) {
+		return bookDao.selectbook(cgid);
 	}
-}
+	}

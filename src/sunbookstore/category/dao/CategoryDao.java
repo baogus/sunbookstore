@@ -11,8 +11,6 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 import sunbookstore.category.domin.Category;
 
-
-
 public class CategoryDao {
 	ComboPooledDataSource dataSource = new ComboPooledDataSource();
 	Connection conn = null;

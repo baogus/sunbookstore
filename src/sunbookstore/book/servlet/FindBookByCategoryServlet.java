@@ -8,28 +8,29 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import sunbookstore.category.domin.Category;
-import sunbookstore.category.service.CategoryService;
 
+import com.sun.org.apache.bcel.internal.generic.NEW;
+
+import sunbookstore.book.domin.Book;
+import sunbookstore.book.service.BookService;
 
 /**
- * Servlet implementation class SelectBookByCategoryServlet
+ * Servlet implementation class FindBookByCategoryServlet
  */
-@WebServlet("/SelectBookByCategoryServlet")
-public class SelectBookByCategoryServlet extends HttpServlet {	
+@WebServlet("/FindBookByCategoryServlet")
+public class FindBookByCategoryServlet extends HttpServlet {
+	BookService bookService = new BookService();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		CategoryService categoryService = new CategoryService();
+		
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=UTF-8");
-		
-		List<Category> categories = categoryService.selectCategory();
-		
-		request.setAttribute("categories", categories);
+		int cgid = Integer.parseInt(request.getParameter("cgid"));
+		List<Book> books=bookService.selectbook(cgid);
+		request.setAttribute("books", books);
 		request.getRequestDispatcher("/jsps/book/bookselect/classical.jsp").forward(request, response);
-		
 	}
 
- 	
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		doGet(request, response);

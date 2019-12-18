@@ -5,7 +5,7 @@
 		 <property name="user">scott</property>
     		<property name="password">tiger</property>
     		<property name="driverClass">oracle.jdbc.driver.OracleDriver</property>
-    		<property name="jdbcUrl">jdbc:oracle:thin:@172.16.11.141:1521:ORCL</property> 
+    		<property name="jdbcUrl">jdbc:oracle:thin:@localhost:1521:ORCL</property> 
     		<!--初始化时获取三个连接，取值应在minPoolSize与maxPoolSize之间。-->
     		<property name="initialPoolSize">3</property>
     		<!--最大空闲时间,10秒内未使用则连接被丢弃。若为0则永不丢弃。-->
