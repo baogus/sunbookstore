@@ -13,16 +13,18 @@
 </head>
 <body>
 
-<form action="" method="post" enctype="multipart/form-data" style="border: 2px solid #77FFEE; width: 410px; margin-left: 300px" >
+<form action="UpdateBookMsgServlet" method="post"  style="border: 2px solid #77FFEE; width: 410px; margin-left: 300px" >
 	<p align="center" style="color: #0066FF; font-style: oblique">修改图书信息</p>
-		<label><img src="<c:url value='${base }admin/img/addbooks.png'/>">书&nbsp;&nbsp;&nbsp;名: <input type="text" name="bname" readonly="readonly" value=""></label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-		<label><img src="<c:url value='${base }admin/img/per.png'/>">作&nbsp;&nbsp;&nbsp;者: <input type="text" name="bauthor" readonly="readonly" value=""></label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-		<label><img src="<c:url value='${base }admin/img/price.png'/>">价&nbsp;&nbsp;&nbsp;格: <input type="text" name="bprice"  value=""></label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+		<input type="text" name="bid"  value="${book.bid }" style="display: none;">
+		 <img src="<c:url value='http://localhost:8080/${book.bimage }'/>" style="width: 77px; height: 88px"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+		<label><img src="<c:url value='${base }admin/img/addbooks.png'/>">书&nbsp;&nbsp;&nbsp;名: <input type="text" name="bname" readonly="readonly" value="${book.bname }"></label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+		<label><img src="<c:url value='${base }admin/img/per.png'/>">作&nbsp;&nbsp;&nbsp;者: <input type="text" name="bauthor" readonly="readonly" value="${book.bauthor }"></label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+		<label><img src="<c:url value='${base }admin/img/price.png'/>">价&nbsp;&nbsp;&nbsp;格: <input type="text" name="bprice"  value="${book.bprice }"></label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
 		<label><img src="<c:url value='${base }admin/img/bdiscount.png'/>">折&nbsp;&nbsp;&nbsp;扣: <input type="text" name="bdiscount" value="${book.bdiscount }"></label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-		<label><img src="<c:url value='${base }admin/img/bcount.png'/>">数&nbsp;&nbsp;&nbsp;量: <input type="text" name="bcount" value=""></label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-		<label><img src="<c:url value='${base }admin/img/bpub.png'/>">出版社:<input type="text" name="bpub" readonly="readonly" value=""></label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+		<label><img src="<c:url value='${base }admin/img/bcount.png'/>">数&nbsp;&nbsp;&nbsp;量: <input type="text" name="bcount" value="${book.bcount }"></label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+		<label><img src="<c:url value='${base }admin/img/bpub.png'/>">出版社:<input type="text" name="bpub" readonly="readonly" value="${book.bpub }"></label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
 		<label ><img src="<c:url value='${base }admin/img/bdesc.png'/>">简&nbsp;&nbsp;&nbsp;介: <br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea cols="48" rows="8" align="center" name="bdesc" readonly="readonly" value=""></textarea>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea cols="48" rows="8" align="center" name="bdesc" readonly="readonly" value="">${book.bdesc }</textarea>
 			</label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="image" src="<c:url value='${base }admin/img/button.png'/>" style="width: 95px; height: 67px;align:center;">
 	</form>

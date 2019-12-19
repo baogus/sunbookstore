@@ -200,4 +200,52 @@ public class BookDao {
 
 	}
 	
+	//通过id删除图书
+		public int updateBookMsg(int bid,int bcount,double bprice,double bdiscount) {
+			int count = -1;
+			try {
+				conn = dataSource.getConnection();
+				String sql = "update book set bprice = ?,bdiscount = ?,bcount=? where bid=?";
+				pstm = conn.prepareStatement(sql);
+				pstm.setDouble(1, bprice);
+				pstm.setDouble(2, bdiscount);
+				pstm.setInt(3, bcount);
+				pstm.setInt(4, bid);
+				count =pstm.executeUpdate();
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+				count  =  -1;
+			}
+			return count;
+		}
+		//通过id查询询图书
+		public Book findBookById(int bid) {
+			Book book  =null;
+			try {
+				conn = dataSource.getConnection();
+				String sql = "select bimage,bname,bauthor,bprice,bdiscount,bcount,bdesc,bpub from book where bid = ?";
+				pstm = conn.prepareStatement(sql);	
+				pstm.setInt(1, bid);
+				rs = pstm.executeQuery();
+				while (rs.next()) {
+					String bimage = rs.getString(1);
+					String bname = rs.getString(2);
+					String bauthor = rs.getString(3);
+					Double bprice = rs.getDouble(4);
+					Double bdiscount = rs.getDouble(5);
+					int bcount = rs.getInt(6);
+					String bdesc = rs.getString(7);
+					String bpub = rs.getString(8);
+					book = new Book(bname, bauthor, bprice, bdesc, bimage, bpub, bcount, bdiscount, bid);
+					return book;
+				}
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+				
+			}
+			return book;
+		}
+	
 }

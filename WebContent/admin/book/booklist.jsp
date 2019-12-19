@@ -25,7 +25,7 @@
 <br>
 <br>
     <form id="form1" runat="server">
-   
+   <p>${msg }</p>
     <table width="100%" id="ListArea" border="1" style="border-color: #33FFDD" class="t1" align="center" cellpadding="0"
         cellspacing="0">
       
@@ -87,6 +87,7 @@
             </td>
              <td>
          <a href="<c:url value ='${base }DeleteBookById?bid=${book.bid }'/>">删除</a>
+         <a href="<c:url value ='${base }FindBookByIDServlet?bid=${book.bid }'/>">修改</a>
             </td>
         </tr>
  </c:forEach>

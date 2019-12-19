@@ -25,9 +25,7 @@
 
 </div>
 <br>
-<br>
-<br>
-<br>
+
     <form id="form1" runat="server">
    <p>${msg }</p>
     <table width="100%" id="ListArea" border="0" class="t1" align="center" cellpadding="0"

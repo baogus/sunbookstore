@@ -48,7 +48,7 @@
                         <br>
                     <li><a href="<c:url value='${base }AdminBookCategoryServlet'/>" >增加书籍</a></li>
                         <br>
-                     <li><a href="<c:url value='${base }admin/book/updatebook.jsp'/>">修改图书</a></li>
+                   <%--   <li><a href="<c:url value='${base }admin/book/updatebook.jsp'/>">修改图书</a></li> --%>
                   
                    
                 </ul>

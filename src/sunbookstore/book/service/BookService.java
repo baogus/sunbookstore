@@ -20,12 +20,19 @@ public class BookService {
 		return bookDao.findAllBook(pc,ps);
 		
 	}
-	
+	//通过id删除图书
 	public int deleteBookById(int bid) {
 		return bookDao.deleteBookById(bid);
 	}
-	
+	//模糊查询图书分页显示
 	public PageBean<Book> findLikeBook(int pc, int ps,String likeString)  {
 		return bookDao.findLikeBook(pc, ps, likeString);
+	}
+	//修改图书库存价格折扣
+	public int updateBookMsg(int bid,int bcount,double bprice,double bdiscount) {
+		return bookDao.updateBookMsg(bid, bcount, bprice, bdiscount);
+	}
+	public Book findBookById(int bid) {
+		return bookDao.findBookById(bid);
 	}
 }
