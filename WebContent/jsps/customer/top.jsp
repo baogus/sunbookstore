@@ -190,8 +190,11 @@
 				<!--n_search start-->
 				<div class="n_search">
 					<div class="s_box">
-						<a href="#" class="b_btn" target="bottom">搜索</a>
-						<input type="text" class="b_txt" placeholder="搜索你喜欢的书籍"/>
+					<!-- 	<a href="/sunbookstore/FindbookBybooknameServlet" class="b_btn" target="bottom">搜索</a> -->
+					<form action="/sunbookstore/FindbookBybooknameServlet">
+						<input type="text" name="name" class="b_txt" placeholder="搜索你喜欢的书籍"/>
+						<input type="submit"  class="b_btn" value="搜索"/>
+					</form>
 					</div>
 					<a href=" /sunbookstore/jsps/shopcart/queryall.jsp" class="s_car" target="bottom">
 						购物车

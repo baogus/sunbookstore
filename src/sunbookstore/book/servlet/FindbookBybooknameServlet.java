@@ -9,31 +9,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
-
 import sunbookstore.book.domin.Book;
 import sunbookstore.book.service.BookService;
 
-/**
- * Servlet implementation class FindBookByCategoryServlet
- */
-@WebServlet("/FindBookByCategoryServlet")
-public class FindBookByCategoryServlet extends HttpServlet {
+
+@WebServlet("/FindbookBybooknameServlet")
+public class FindbookBybooknameServlet extends HttpServlet {
 	BookService bookService = new BookService();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		request.setCharacterEncoding("utf-8");
+       
+    	request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=UTF-8");
-		int cgid = Integer.parseInt(request.getParameter("cgid"));
-		List<Book> books=bookService.selectbook(cgid);
-		request.getSession().setAttribute("books", books);
-		request.getRequestDispatcher("/jsps/book/bookselect/classical.jsp").forward(request, response);
-		
-	}
+		String  name = request.getParameter("name");
+		List<Book> booknames=bookService.FindbookBybookname(name);
+		if(booknames.isEmpty()){
+			request.setAttribute("msg", "meiyoushu");
+		}
+		request.getSession().setAttribute("booknames", booknames);
+		request.getRequestDispatcher("/jsps/book/bookselect/findbookname.jsp").forward(request, response);
+    }
 
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		doGet(request, response);
 	}
 

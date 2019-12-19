@@ -12,4 +12,8 @@ public class BookService {
 	public List<Book> selectbook(int cgid) {
 		return bookDao.selectbook(cgid);
 	}
+	public List<Book> FindbookBybookname(String bname) {
+		return bookDao.FindbookBybookname(bname);
+		
+	}
 	}

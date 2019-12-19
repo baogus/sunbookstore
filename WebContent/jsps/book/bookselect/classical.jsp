@@ -35,11 +35,12 @@
    <td>
 
     <div>
-       <a href="xminute.jsp" target="bottom" width="200" height="200">${bookcategory.bimage } </a> 
+       <a href="/sunbookstore/jsps/book/bookselect/xminute.jsp" target="bottom" >
+       <img width="200px" height="200px" src="${bookcategory.bimage }"></a> 
     </div>
     
     <div>
-       <a href="xminute.jsp" target="bottom">${bookcategory.bname } </a>          
+       <a href="/sunbookstore/jsps/book/bookselect/xminute.jsp" target="bottom">${bookcategory.bname } </a>          
     </div>
     <div>
          ${bookcategory.bauthor } 

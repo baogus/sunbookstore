@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
+     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="jquery-3.2.1.js"></script>
 <script>
@@ -81,19 +81,20 @@ a{
 
 </style>
 </head>
+
 <body>
 <table>
- <c:forEach items="${books }" var="bookcategory">
+ <c:forEach items="${booknames }" var="bookname">
  
     <tr>
-       <td ><img width="200px" height="200px" src="${bookcategory.bimage }"></td>
+       <td ><img width="200px" height="200px" src="${bookname.bimage }"></td>
        <td>
-         <div>${bookcategory.bname }</div>
-         <div>${bookcategory.bdesc}</div>
-         <div>${bookcategory.bauthor}</div>
-         <div>${bookcategory.bpub}</div>
-         <div>${bookcategory.bprice}</div>
-         <div>${bookcategory.bdiscount}</div>      
+         <div>${bookname.bname }</div>
+         <div>${bookname.bdesc }</div>
+         <div>${bookname.bauthor }</div>
+         <div>${bookname.bpub }</div>
+         <div>${bookname.bprice }</div>
+         <div>${bookname.bdiscount }</div>      
          
            <ul class = "nav">
               <li class = "list-item">
@@ -111,6 +112,6 @@ a{
        </tr>
  
   </c:forEach>
-</table> 
+</table>
 </body>
 </html>
