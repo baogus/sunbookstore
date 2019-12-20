@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import filter.adminfilter.AdminState;
+import sunbookstore.Manager.domain.Manager;
 import sunbookstore.book.domin.Book;
 import sunbookstore.book.service.BookService;
 import sunbookstore.pageBean.PageBean;
@@ -20,6 +22,8 @@ import sunbookstore.pageBean.PageBean;
 public class FindAllBookServlet extends HttpServlet {
 	BookService bookService = new BookService();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+	
 		String pc1 = request.getParameter("pc");
 		 if(pc1==null&& pc1.trim().isEmpty()){ 
 			 pc1="1";
@@ -39,6 +43,9 @@ public class FindAllBookServlet extends HttpServlet {
 			e.printStackTrace();
 		}//传递pc, ps给Service，得到PageBean
 		
+	
+		
+
 	}
 
 	

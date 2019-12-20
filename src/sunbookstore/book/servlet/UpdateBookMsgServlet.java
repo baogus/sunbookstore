@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import sunbookstore.Manager.domain.Manager;
 import sunbookstore.book.service.BookService;
 
 /**
@@ -14,8 +15,13 @@ import sunbookstore.book.service.BookService;
  */
 @WebServlet("/UpdateBookMsgServlet")
 public class UpdateBookMsgServlet extends HttpServlet {
-	BookService bookService = new BookService();
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		
+		Manager manager = (Manager)request.getSession().getAttribute("manager");
+		if(manager!=null) {//登录成功执行
+			BookService bookService = new BookService();
 		int bid = Integer.parseInt(request.getParameter("bid"));
 		int bcount = Integer.parseInt(request.getParameter("bcount"));
 		double bprice = Double.parseDouble(request.getParameter("bprice"));
@@ -26,6 +32,11 @@ public class UpdateBookMsgServlet extends HttpServlet {
 			request.getRequestDispatcher("FindAllBookServlet?pc=1").forward(request, response);
 		}
 		
+	
+		}else {//没有登录
+			request.setAttribute("msg", "您还没有登录！不能进行该操作！");
+			request.getRequestDispatcher("/error/adminerror.jsp").forward(request, response);
+		}	
 		
 	}
 

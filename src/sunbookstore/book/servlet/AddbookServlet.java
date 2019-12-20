@@ -22,6 +22,7 @@ import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
+import sunbookstore.Manager.domain.Manager;
 import sunbookstore.book.domin.Book;
 import sunbookstore.book.service.BookService;
 import sunbookstore.category.domain.Category;
@@ -37,6 +38,8 @@ public class AddbookServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		Manager manager = (Manager)request.getSession().getAttribute("manager");
+		if(manager !=null) {//登录成功执行
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 		String bname = null;
@@ -50,7 +53,7 @@ public class AddbookServlet extends HttpServlet {
 		String bimage = null;// 图片路径
 		String bookimg = null;// 图片名字
 		double bdiscount = 0;
-
+		
 		DiskFileItemFactory factory = new DiskFileItemFactory(1024 * 1024 * 1024, new File("D:/img"));
 		ServletFileUpload sfu = new ServletFileUpload(factory);
 		Map<String, String> errors = new HashMap<String, String>();
@@ -172,6 +175,10 @@ public class AddbookServlet extends HttpServlet {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+		}else {//没有登录
+			request.setAttribute("msg", "您还没有登录！不能进行该操作！");
+			request.getRequestDispatcher("/error/adminerror.jsp").forward(request, response);
 		}
 	}
 

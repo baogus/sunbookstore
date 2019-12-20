@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import sunbookstore.Manager.domain.Manager;
 import sunbookstore.book.domin.Book;
 import sunbookstore.book.service.BookService;
 import sunbookstore.pageBean.PageBean;
@@ -19,7 +20,7 @@ public class FindLikeBookServlet extends HttpServlet {
 
 	BookService bookService = new BookService();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	
 		String likeString = request.getParameter("string");
 		String pc1="1";
 			
@@ -38,6 +39,9 @@ public class FindLikeBookServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}//传递pc, ps给Service，得到PageBean
+		
+		
+		
 		}
 
 	

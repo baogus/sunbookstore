@@ -17,7 +17,7 @@ import sunbookstore.Manager.domain.Manager;
  */
 @WebFilter(
 		urlPatterns = { "/admin/admin/updateadmin.jsp" ,
-				"/admin/book/addbook.jsp" 
+				"/admin/book/updatebook.jsp" 
 				
 			
 		}, 
@@ -50,15 +50,15 @@ public class LoginFilter implements Filter {
 	}
 
 	
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		HttpServletRequest httpRequest = (HttpServletRequest) request;
-		Manager manager = (Manager)httpRequest.getSession().getAttribute("manager");
+	public void doFilter(ServletRequest request1, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+		HttpServletRequest request = (HttpServletRequest) request1;
+		Manager manager = (Manager)request.getSession().getAttribute("manager");
 		if(manager != null) {
 			chain.doFilter(request, response);
 		} else {
-			httpRequest.setAttribute("msg", "您还没有登录！不能进行该操作！");
+			request.setAttribute("msg", "您还没有登录！不能进行该操作！");
 			
-			httpRequest.getRequestDispatcher("/error/adminerror.jsp").forward(httpRequest, response);
+			request.getRequestDispatcher("/error/adminerror.jsp").forward(request, response);
 		}
 	}
 

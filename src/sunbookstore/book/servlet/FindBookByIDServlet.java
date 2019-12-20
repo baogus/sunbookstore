@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import sunbookstore.Manager.domain.Manager;
 import sunbookstore.book.domin.Book;
 import sunbookstore.book.service.BookService;
 
@@ -17,10 +18,15 @@ import sunbookstore.book.service.BookService;
 public class FindBookByIDServlet extends HttpServlet {
 	BookService bookService = new BookService();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+	
+			
+		
 		int bid  = Integer.parseInt(request.getParameter("bid"));
 		 Book book=bookService.findBookById(bid);
 		 request.setAttribute("book", book);
 		 request.getRequestDispatcher("/admin/book/updatebook.jsp").forward(request, response);
+	
 	}
 
 	
