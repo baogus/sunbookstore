@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,10 +30,8 @@
  </tr> -->
   <table width="100%"> 
    <c:forEach items="${books }" var="bookcategory">
-    <tr>
-      
+    <tr>    
    <td>
-
     <div>
        <a href="/sunbookstore/jsps/book/bookselect/xminute.jsp" target="bottom" >
        <img width="200px" height="200px" src="${bookcategory.bimage }"></a> 
@@ -49,10 +47,8 @@
          ${bookcategory.bprice }
     </div>    
    </td>   
- </tr>
-		
-	</c:forEach>
-				
+    </tr>		
+	</c:forEach>				
 </table>    　
 
 

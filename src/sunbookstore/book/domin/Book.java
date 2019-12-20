@@ -4,18 +4,18 @@ public class Book {
    private  int  bid;
    private String bname;
    private String bauthor;
-   private int bprice;
+   private double bprice;
    private String bdesc;
    private String bimage;
    private String bpub;
    private int bsum;
-   private int bdiscount;
-   private int bcid;
+   private double bdiscount;
+   
 public Book() {
 	// TODO Auto-generated constructor stub
 }
-public Book(int bid, String bname, String bauthor, int bprice, String bdesc, String bimage, String bpub, int bsum,
-		int bdiscount) {
+public Book(int bid, String bname, String bauthor, double bprice, String bdesc, String bimage, String bpub, int bsum,
+		double bdiscount) {
 	super();
 	this.bid = bid;
 	this.bname = bname;
@@ -26,7 +26,7 @@ public Book(int bid, String bname, String bauthor, int bprice, String bdesc, Str
 	this.bpub = bpub;
 	this.bsum = bsum;
 	this.bdiscount = bdiscount;
-	this.bcid = bcid;
+	
 }
 public int getBid() {
 	return bid;
@@ -46,10 +46,10 @@ public String getBauthor() {
 public void setBauthor(String bauthor) {
 	this.bauthor = bauthor;
 }
-public int getBprice() {
+public double getBprice() {
 	return bprice;
 }
-public void setBprice(int bprice) {
+public void setBprice(double bprice) {
 	this.bprice = bprice;
 }
 public String getBdesc() {
@@ -76,17 +76,12 @@ public int getBsum() {
 public void setBsum(int bsum) {
 	this.bsum = bsum;
 }
-public int getBdiscount() {
+public double getBdiscount() {
 	return bdiscount;
 }
-public void setBdiscount(int bdiscount) {
+public void setBdiscount(double bdiscount) {
 	this.bdiscount = bdiscount;
 }
-public int getBcid() {
-	return bcid;
-}
-public void setBcid(int bcid) {
-	this.bcid = bcid;
-}
+
    
 }

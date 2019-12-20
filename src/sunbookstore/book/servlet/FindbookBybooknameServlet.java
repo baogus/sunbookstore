@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import sunbookstore.book.dao.BookDao;
 import sunbookstore.book.domin.Book;
 import sunbookstore.book.service.BookService;
 
@@ -20,7 +21,7 @@ public class FindbookBybooknameServlet extends HttpServlet {
        
     	request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=UTF-8");
-		String  name = request.getParameter("name");
+		String  name = request.getParameter("name");		
 		List<Book> booknames=bookService.FindbookBybookname(name);
 		if(booknames.isEmpty()){
 			request.setAttribute("msg", "meiyoushu");

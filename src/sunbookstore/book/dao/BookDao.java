@@ -34,12 +34,12 @@ public class BookDao {
 			int bid = rs.getInt(1);
 			String bname = rs.getString(2);
 			String bauthor=rs.getString(3) ;
-			int bprice=rs.getInt(4);
+			double bprice=rs.getInt(4);
 			String bdesc=rs.getString(5);
 			String bimage=rs.getString(6);
 			String bpub=rs.getString(7);
 			int bsum=rs.getInt(9);
-			int bdiscount=rs.getInt(10);
+			double bdiscount=rs.getInt(10);
 			book = new Book(bid,bname,bauthor,bprice,bdesc,bimage,bpub,bsum,bdiscount);
 			books.add(book);
 		}
@@ -51,27 +51,30 @@ public class BookDao {
 	return books;
 	} 
 	
-//按照书名模糊查询
+//模糊查询
 	public List<Book> FindbookBybookname(String name){
 		Book bookname=null;
 		List<Book> booknames = new ArrayList<Book>();
 		
 		try {
 		conn = dataSource.getConnection();
-		String  sql = "select * from book where bname like ?";
+		String  sql = "select * from book where bname like ? or bauthor like ? or bpub like ? or bdesc like ?";
 		pstm = conn.prepareStatement(sql);
 		pstm.setString(1, "%"+name+"%");
-		rs  =pstm.executeQuery();
+		pstm.setString(2, "%"+name+"%");
+		pstm.setString(3,"%"+name+"%");
+		pstm.setString(4, "%"+name+"%");
+		rs = pstm.executeQuery();
 		while(rs.next()) {
 			int bid = rs.getInt(1);
 			String bname = rs.getString(2);
 			String bauthor=rs.getString(3) ;
-			int bprice=rs.getInt(4);
+			double bprice=rs.getInt(4);
 			String bdesc=rs.getString(5);
 			String bimage=rs.getString(6);
 			String bpub=rs.getString(7);
 			int bsum=rs.getInt(9);
-			int bdiscount=rs.getInt(10);
+			double bdiscount=rs.getInt(10);
 			bookname = new Book(bid,bname,bauthor,bprice,bdesc,bimage,bpub,bsum,bdiscount);
 			booknames.add(bookname);
 		}
