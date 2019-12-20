@@ -10,9 +10,9 @@
     <welcome-file>default.jsp</welcome-file>
     </welcome-file-list>
   <!--  <filter>
-    <display-name>LoginFilter</display-name>
+   
     <filter-name>LoginFilter</filter-name>
-    <filter-class>sunbookstore.customer.servlet.LoginFilter</filter-class>
+    <filter-class>filter.adminfilter.LoginFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>LoginFilter</filter-name>
@@ -42,5 +42,5 @@
     <filter-name>LoginFilter</filter-name>
     <servlet-name>UpdateAdminServlet</servlet-name>
   </filter-mapping>
-   -->
+ -->
 </web-app>

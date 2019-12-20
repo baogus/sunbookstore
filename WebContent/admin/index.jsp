@@ -26,8 +26,9 @@
   <body>
 <table class="table" align="center" border="0">
 	<tr >
+	
 		<td colspan="2" align="center" style="width: 100%; height:15%;">
-			<iframe frameborder="0" src="<c:url value='${base }admin/top.jsp'/>" name="top" scrolling="no"></iframe>
+			<iframe frameborder="0" src="<c:url value='${base }admin/top.jsp'/>" name="top" scrolling="no"><p></iframe>
 		</td>
 	</tr>
 	<tr>
