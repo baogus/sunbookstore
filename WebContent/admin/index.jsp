@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <base href="${base }">
+ <base href="${base }">
 <meta charset="UTF-8">
 <script type="text/javascript">
 	window.onload=function(){

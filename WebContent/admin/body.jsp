@@ -5,8 +5,7 @@
 <c:set var="base" value="${req.scheme}://${req.serverName}:${req.serverPort}${req.contextPath }/"/>
 <!DOCTYPE html>
 <html>
-<head>
-    <base href="${base }">
+<base href="${base }">
 <meta charset="UTF-8">
 <title>body</title>
 </head>
