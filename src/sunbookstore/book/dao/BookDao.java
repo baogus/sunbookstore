@@ -149,7 +149,7 @@ public class BookDao {
 		 * 得到tr总记录数
 		 */
 		conn = dataSource.getConnection();
-		String sql = "select count(*) from book where bname = ? or bdesc = ?";
+		String sql = "select count(*) from book where bname like ? or bdesc like ?";
 		pstm = conn.prepareStatement(sql);
 		pstm.setString(1, "%"+likeString+"%");
 		pstm.setString(2, "%"+likeString+"%");
@@ -162,7 +162,7 @@ public class BookDao {
 		 * 得到beanList得到每页记录数
 		 */
 			
-		sql = "select bimage,bname,bauthor,bprice,bdiscount,bcount,bdesc,bpub,bid from ( select bimage,bname,bauthor,bprice,bdiscount,bcount,bdesc,bpub ,bid,rownum rn from book where rownum<= ? order by bid ) where rn >= ? and bname like ? or bdesc = ?";
+		sql = "select bimage,bname,bauthor,bprice,bdiscount,bcount,bdesc,bpub,bid from ( select bimage,bname,bauthor,bprice,bdiscount,bcount,bdesc,bpub ,bid,rownum rn from book where rownum<= ? order by bid ) where rn >= ? and bname like ? or bdesc like ?";
 		pstm = conn.prepareStatement(sql);
 		pstm.setInt(1, ps);
 		pstm.setInt(2,(pc-1)*10);

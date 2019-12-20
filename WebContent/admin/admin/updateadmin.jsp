@@ -18,7 +18,7 @@
 <meta charset="UTF-8">
 </head>
 <body>
-
+<p>${msg }</p>
 
 	<form action="<c:url value='${base }UpdateAdminServlet'/>" style="align:center;" method="post">
 		<img src="<c:url value='${base }admin/img/per.png'/>">姓名: <input type="text" name="mname" value="${sessionScope.manager.mname }"><br>

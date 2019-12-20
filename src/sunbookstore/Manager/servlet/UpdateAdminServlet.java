@@ -24,11 +24,13 @@ public class UpdateAdminServlet extends HttpServlet {
 		int count = managerService.updatePassword(manager1,manager2);
 		if(count > 0) {
 			request.setAttribute("msg", "修改成功！");
-			request.getRequestDispatcher("/admin/admin/updateadmin.jsp");
+			request.getSession().invalidate();
+			response.sendRedirect("/sunbookstore/admin/index.jsp");
 		}else {
 			request.setAttribute("msg", "修改失败！！");
-			request.getRequestDispatcher("/admin/admin/updateadmin.jsp");
+			request.getRequestDispatcher("/admin/admin/updateadmin.jsp").forward(request, response);
 		}
+		
 	}
 
 	

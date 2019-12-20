@@ -114,20 +114,21 @@ public class CustomerDao {
 		 * 得到tr总记录数
 		 */
 		conn = dataSource.getConnection();
-		String sql = "select count(*) from customer where cname like ? or cname = ?";
+		String sql = "select count(*) from customer where cname like ? or caddress like ?";
 		pstm = conn.prepareStatement(sql);
 		pstm.setString(1, "%"+likeString+"%");
 		pstm.setString(2, "%"+likeString+"%");
 		rs = pstm.executeQuery();
 		while(rs.next()) {
 			tr = rs.getInt(1);
+			System.err.println(tr);
 		}
 		pb.setTr(tr);
 		/*
 		 * 得到beanList得到每页记录数
 		 */
 			/* oracle的分页查询语法 */
-		sql = "select cname,csex,ctel,caddress,cid from ( select cname,csex,ctel,caddress ,cid,rownum rn from customer where rownum<= ? order by cid ) where rn >= ? and cname like ? or cname = ?";
+		sql = "select cname,csex,ctel,caddress,cid from ( select cname,csex,ctel,caddress ,cid,rownum rn from customer where rownum<= ? order by cid ) where rn >= ? and (cname like ? or caddress like ?)";
 		pstm = conn.prepareStatement(sql);
 		pstm.setInt(1, ps);
 		pstm.setInt(2,(pc-1)*10);//设定每页十行记录数

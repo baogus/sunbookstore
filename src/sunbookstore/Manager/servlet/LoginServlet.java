@@ -29,6 +29,7 @@ public class LoginServlet extends HttpServlet {
 			request.getSession().setAttribute("manager", manager);
 			request.getRequestDispatcher("/admin/index.jsp").forward(request, response);
 		}else {
+			request.setAttribute("msg", "用户名或密码错误");
 			request.setAttribute("manager", manager);
 			request.getRequestDispatcher("/admin/admin/login.jsp").forward(request, response);
 		}

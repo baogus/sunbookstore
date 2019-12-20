@@ -7,7 +7,6 @@
 <html>
 <head>
     <base href="${base }">
-<base target="top">
 <meta charset="UTF-8">
  <link rel="stylesheet" href="<c:url value='${base }admin/css/top.css'/>" >
 <title>顶部</title>
@@ -15,10 +14,10 @@
 </head>
 <body>
 <div class="top" id="top">
-	
+	<p style="align:center;">${msg }</p>
 <c:choose>
 	<c:when test="${empty sessionScope.manager }">
-		<form action="<c:url value='${base }admin/admin/login.jsp'/>" >
+		<form action="<c:url value='${base }admin/admin/login.jsp'/>">
 	 		<input type="submit" value="登录" class="btn1">
 	 	</form>
 	 </c:when>

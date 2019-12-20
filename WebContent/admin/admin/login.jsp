@@ -14,10 +14,25 @@
 }
 </style>
 <meta charset="UTF-8">
+<script type="text/javascript">
+	window.onload=function(){
+		function name(){
+			if(window !=top){
+
+			       top.location.href=location.href;
+
+			     }
+
+		}
+		name();
+	}
+</script>
 <title>模拟管理员登录</title>
 </head>
 <body>
+
 <form action="<c:url value='${base }LoginServlet'/>" style="margin-left: 400px;" method="post">
+<p>${msg }</p>
 	<img src="<c:url value='${base }admin/img/per.png'/>">姓名: <input type="text" name="mname" value="${manager.mname }"><br>
 		<img src="<c:url value='${base }admin/img/password.png'/> ">密码: <input type="password" name="mpassword" value="${manager.mpassword }"><br>
 		<input type="submit" value="添加" style="background-color: #77FFCC;width: 70px; align-content: center;"><br>

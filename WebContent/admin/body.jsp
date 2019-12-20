@@ -11,6 +11,6 @@
 <title>body</title>
 </head>
 <body>
-
+<img src="<c:url value='${base }admin/img/bg1.png'/>" style="width:1000px; height: 300px;">
 </body>
 </html>
