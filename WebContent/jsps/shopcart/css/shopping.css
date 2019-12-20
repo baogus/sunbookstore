@@ -1,0 +1,64 @@
+
+*{
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		line-height:20px;
+		color:darkcyan; 
+	   }
+	 .war{
+		width:100%;
+		margin:10px auto 5px auto;
+		clear:both;
+	   }
+	table{
+		margin: 80px auto;
+	}
+	table .title{
+		background: navajowhite;
+		height: 50px;
+	}
+	table .title td{
+		color: brown;
+		text-align: center;
+		font-size: 20px;
+		border-right:solid 2px #FFF;
+	}
+	.line{
+		background-color:#a7cbff;
+		height:3px;
+		}	
+	a{
+		color:#1965b3;
+	    text-decoration: none;
+	}    
+	a:hover{
+		color:red;
+		text-decoration:underline;
+		font-size: 17px;
+	}
+	img:hover{
+		width:100px
+	}
+	tfoot button{
+		background: #FF801F;
+		width: 90px;
+		height: 30px;
+		border-radius: 20%;
+		border:crimson 1px solid;
+		color: white;
+	}
+	tfoot button:hover{
+		width: 100px;
+		background: deeppink;
+		color: black;
+		border-radius: 30%;
+	}
+	.cart_td_1{
+		border-bottom:solid 2px #d1ecff;
+		border-top:solid 2px #d1ecff;
+		text-align:center;
+		padding:5px;
+		border-right:solid 2px #FFF;
+		}
