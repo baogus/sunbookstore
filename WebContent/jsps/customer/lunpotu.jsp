@@ -1,31 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-<<<<<<< HEAD
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="req" value="${pageContext.request }"/>
-<c:set var="base" value="${req.scheme}://${req.serverName}:${req.serverPort}${req.contextPath }/"/>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
- <base href="${base }">
+		<base target="lunpotu">
 		<meta charset="utf-8">
-		<title>内容显示页面</title>
-		<link rel="stylesheet" href="<c:url value='${base }jsps/customer/css/bootstrap.min.css'/>">
-		<script src="<c:url value='${base }jsps/customer/js/jquery.min.js'/>"></script>
-		<script src="<c:url value='${base }jsps/customer/js/popper.min.js'/>"></script>
-		<script src="<c:url value='${base }jsps/customer/js/bootstrap.min.js'/>"></script>
-=======
-
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>内容显示页面</title>
+		<title>轮播图</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<script src="js/jquery.min.js"></script>
 		<script src="js/popper.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
->>>>>>> fcl
 		<style>
 			body{
 				background:#DBDBE1;
@@ -59,27 +43,6 @@
 		  <!-- 轮播图片 -->
 		  <div class="carousel-inner">
 		    <div class="carousel-item active">
-<<<<<<< HEAD
-		      <img src="<c:url value='${base }jsps/customer/img/1.jpg'/>">
-		    </div>
-		    <div class="carousel-item">
-		      <img src="<c:url value='${base }jsps/customer/img/2.jpg'/>">
-		    </div>
-		    <div class="carousel-item">
-		      <img src="<c:url value='${base }jsps/customer/img/3.jpg'/>">
-		    </div>
-			<div class="carousel-item">
-			  <img src="<c:url value='${base }jsps/customer/img/4.jpg'/>">
-			</div>
-			<div class="carousel-item">
-			  <img src="<c:url value='${base }jsps/customer/img/5.jpg'/>">
-			</div>
-			<div class="carousel-item">
-			  <img src="<c:url value='${base }jsps/customer/img/6.jpg'/>">
-			</div>
-			<div class="carousel-item">
-			  <img src="<c:url value='${base }jsps/customer/img/7.jpg'/>">
-=======
 		      <img src="img/1.jpg">
 		    </div>
 		    <div class="carousel-item">
@@ -99,7 +62,6 @@
 			</div>
 			<div class="carousel-item">
 			  <img src="img/7.jpg">
->>>>>>> fcl
 			</div>
 		  </div>
 		 

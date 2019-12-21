@@ -20,9 +20,12 @@
 <<<<<<< HEAD
 
 	<tr bgcolor="#CCCCCC"  height="40px" ><!--  -->
+<<<<<<< HEAD
 =======
 	<tr bgcolor="#CCCCCC"  height="40px" >
 >>>>>>> fxb
+=======
+>>>>>>> fcl
 		<th colspan = "2">书籍</th>
 		<th>单价</th>
 		<th>收货人</th>
@@ -50,6 +53,7 @@
 		<td>小计：79.8元</td>
 	</tr>
 	<tr height="35px">
+<<<<<<< HEAD
 =======
 	
 	<%
@@ -81,16 +85,22 @@
 	</tr>
 	<!-- <tr height="35px">
 >>>>>>> fxb
+=======
+>>>>>>> fcl
 		<td colspan="6">
 			订单编号：abcdefg　成交时间：2000-01-01 15:30　
 
 					
 		</td>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<td rowspan="2"><a href="OrderDetail.jsp" target="bottom">付款</a><br><a href="#">删除</a></td>
 =======
 		<td rowspan="2"><a href="#">付款</a><br><a href="#">删除</a></td>
 >>>>>>> fxb
+=======
+		<td rowspan="2"><a href="OrderDetail.jsp" target="bottom">付款</a><br><a href="#">删除</a></td>
+>>>>>>> fcl
 	</tr>
 	<tr bgcolor="#FFFFCC" align="center">
 		<td width="15%" height="80px">
@@ -101,10 +111,14 @@
 		<td>收货人信息</td>
 		<td>数量：2</td>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<td>小计：79.8元</td>sssss
 =======
 		<td>小计：79.8元</td>
 >>>>>>> fxb
+=======
+		<td>小计：79.8元</td>sssss
+>>>>>>> fcl
 	</tr>
 	<tr >
 		<td colspan="6" height="35px">
@@ -113,10 +127,14 @@
 					
 		</td>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<td rowspan="2"><a href="OrderDetail.jsp" target="bottom">付款</a><br><a href="#">删除</a></td>
 =======
 		<td rowspan="2"><a href="#">付款</a><br><a href="#">删除</a></td>
 >>>>>>> fxb
+=======
+		<td rowspan="2"><a href="OrderDetail.jsp" target="bottom">付款</a><br><a href="#">删除</a></td>
+>>>>>>> fcl
 	</tr>
 	<tr bgcolor="#FFFFCC" align="center">
 		<td width="15%" height="80px">

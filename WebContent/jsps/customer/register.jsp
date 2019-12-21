@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<<<<<<< HEAD
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="req" value="${pageContext.request }"/>
 <c:set var="base" value="${req.scheme}://${req.serverName}:${req.serverPort}${req.contextPath }/"/>
@@ -7,6 +8,11 @@
 <html>
 <head>
  <base href="${base }">
+=======
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+>>>>>>> fcl
  		<meta charset="UTF-8">
 		<title>用户注册页面</title>
 		<style type="text/css">
@@ -114,7 +120,11 @@
 	<body  onselectstart="return false">
 		<div id="login_main">
 			<div class="login">
+<<<<<<< HEAD
 				<form action="<c:url value='${base }jsps/index.jsp'/>" target="bottom">
+=======
+				<form action="index.jsp" target="bottom">
+>>>>>>> fcl
 					<h2>
 						<a href="register.html" target="bottom">登录</a>注册
 					</h2>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<<<<<<< HEAD
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="req" value="${pageContext.request }"/>
 <c:set var="base" value="${req.scheme}://${req.serverName}:${req.serverPort}${req.contextPath }/"/>
@@ -7,6 +8,11 @@
 <html>
 <head>
  <base href="${base }">
+=======
+<!DOCTYPE html>
+<html>
+		<head>
+>>>>>>> fcl
 		<meta charset="utf-8">
 		<title>主页面</title>
 		<style>
@@ -38,16 +44,27 @@
 	</head>
 	<body onselectstart="return false">
 		<div class="top">
+<<<<<<< HEAD
 			<iframe name="top" width="100%" src="<c:url value='${base }jsps/customer/top.jsp'/>"></iframe>
 		</div>
 		<div class="left">
 			<iframe name="left" width="100%" height="100%" src="<c:url value='${base }jsps/customer/left.jsp'/>"></iframe>
+=======
+			<iframe name="top" width="100%" src="customer/top.jsp"></iframe>
+		</div>
+		<div class="left">
+			<iframe name="left" width="100%" height="100%" src="customer/left.jsp"></iframe>
+>>>>>>> fcl
 		</div>
 		<!--<div class="lunpotu">
 			<iframe name="lunpotu" width="100%" height="100%" src="customer/lunpotu.jsp"></iframe>
 		</div>-->
 		<div class="bottom">
+<<<<<<< HEAD
 			<iframe name="bottom" width="100%" height="100%" src="<c:url value='${base }jsps/customer/bottom.jsp'/>" scrolling="no"></iframe>
+=======
+			<iframe name="bottom" width="100%" height="100%" src="customer/bottom.jsp" scrolling="no"></iframe>
+>>>>>>> fcl
 		</div>
 	</body>
 </html>

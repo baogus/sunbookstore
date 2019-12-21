@@ -1,2 +1,6 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
+=======
+encoding//WebContent/jsps/customer/lunpotu.jsp=UTF-8
+>>>>>>> fcl
 encoding//WebContent/jsps/customer/register.jsp=UTF-8

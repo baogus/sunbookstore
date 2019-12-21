@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<<<<<<< HEAD
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="req" value="${pageContext.request }"/>
 <c:set var="base" value="${req.scheme}://${req.serverName}:${req.serverPort}${req.contextPath }/"/>
@@ -7,6 +8,11 @@
 <html>
 <head>
  <base href="${base }">
+=======
+<!DOCTYPE html>
+<html>
+	<head>
+>>>>>>> fcl
 		<meta charset="utf-8">
 		<base tarfet="top">
 		<title>Insert title here</title>
@@ -147,9 +153,15 @@
 		<div class="top">
 			<div class="t_login">
 				<ul>
+<<<<<<< HEAD
 					<li><a href="<c:url value='${base }jsps/customer/login.jsp'/>" target="bottom">登录</a></li>
 					<li>|</li>
 					<li><a href="<c:url value='${base }jsps/customer/register.jsp'/>" target="bottom">注册</a></li>
+=======
+					<li><a href="login.jsp" target="bottom">登录</a></li>
+					<li>|</li>
+					<li><a href="register.jsp" target="bottom">注册</a></li>
+>>>>>>> fcl
 				</ul>
 			</div>
 		</div>
@@ -162,28 +174,44 @@
 				<div class="n_icon">
 					<ul>
 						<li>
+<<<<<<< HEAD
 							<a href="<c:url value='${base }jsps/customer/bottom.jsp'/>" target="bottom">
+=======
+							<a href="bottom.jsp" target="bottom">
+>>>>>>> fcl
 								<span>首页</span>
 							</a>
 						</li>
 					</ul>
 					<ul>
 						<li>
+<<<<<<< HEAD
 							<a href="<c:url value='${base }jsps/customer/my_page.jsp'/>" target="bottom">
+=======
+							<a href="my_page.jsp" target="bottom">
+>>>>>>> fcl
 								<span>个人主页</span>
 							</a>
 						</li>
 					</ul>
 					<ul>
 						<li>
+<<<<<<< HEAD
 							<a href="<c:url value='${base }jsps/customer/contact_us.jsp'/>" target="bottom">
+=======
+							<a href="contact_us.jsp" target="bottom">
+>>>>>>> fcl
 								<span>联系我们</span>
 							</a>
 						</li>
 					</ul>
 					<ul>
 						<li>
+<<<<<<< HEAD
 							<a href="<c:url value='${base }jsps/customer/about.jsp'/>" target="bottom">
+=======
+							<a href="about.jsp" target="bottom">
+>>>>>>> fcl
 								<span>关于</span>
 							</a>
 						</li>
@@ -197,7 +225,11 @@
 						<a href="#" class="b_btn" target="bottom">搜索</a>
 						<input type="text" class="b_txt" placeholder="搜索你喜欢的书籍"/>
 					</div>
+<<<<<<< HEAD
 					<a href="<c:url value='${base }jsps/shopcart/queryall.jsp'/>" class="s_car" target="bottom">
+=======
+					<a href=" /sunbookstore/jsps/shopcart/queryall.jsp" class="s_car" target="bottom">
+>>>>>>> fcl
 						购物车
 					</a>
 				</div>

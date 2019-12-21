@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<<<<<<< HEAD
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="req" value="${pageContext.request }"/>
 <c:set var="base" value="${req.scheme}://${req.serverName}:${req.serverPort}${req.contextPath }/"/>
@@ -7,6 +8,11 @@
 <html>
 <head>
  <base href="${base }">
+=======
+<!DOCTYPE html>
+<html>
+	<head>
+>>>>>>> fcl
 		<meta charset="utf-8">
 		<title>个人主页</title>
 		<style type="text/css">
@@ -105,7 +111,11 @@
 			<div class="war">
 				<div class="customer">
 					<div class="customer_img">
+<<<<<<< HEAD
 						<img src="<c:url value='${base }jsps/customer/img/default_photo.png'/>" />
+=======
+						<img src="img/default_photo.png" />
+>>>>>>> fcl
 					</div>
 					<div class="customer_title">欢迎进入阳光书店</div>
 				</div>
@@ -116,7 +126,11 @@
 							<li><a href="#"><span>性别:<input  type="text" value="男" readonly="readonly"></span></a></li>
 							<li><a href="#"><span>电话:<input  type="text" value="13737214728" readonly="readonly"></span></a></li>
 							<li><a href="#"><span>收货地址:<input  type="text" value="宁夏银川市西夏区二民院" readonly="readonly"></span></a></li>
+<<<<<<< HEAD
 							<li><span><a href="<c:url value='${base }jsps/order/order.jsp'/>" target="bottom">查看我的订单</a></span></li>
+=======
+							<li><span><a href=" /sunbookstore/jsps/order/order.jsp" target="bottom">查看我的订单</a></span></li>
+>>>>>>> fcl
 						</ul>
 						<div class="last">
 							<input type="button" value="修改信息" name="change"/>

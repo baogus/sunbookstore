@@ -19,11 +19,14 @@
 <script type="text/javascript" src="jquery/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="jquery/queryshopping.js"></script>
 <link rel="stylesheet" type="text/css" href="css/shopping.css" />
+<<<<<<< HEAD
 =======
 <script type="text/javascript" src="<%=basePath%>jsps/shopcart/jquery/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="<%=basePath%>jsps/shopcart/jquery/queryshopping.js"></script>
 <link rel="stylesheet" type="text/css" href="<%=basePath%>jsps/shopcart/css/shopping.css" />
 >>>>>>> fxb
+=======
+>>>>>>> fcl
 
 </head>
 <body onselectstart="return false">
@@ -40,17 +43,23 @@
 				<td>操作</td>
 			</tr>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 			<%
 				List<Shop> shops = (List<Shop>)request.getAttribute("shops");
 				for(Shop shop:shops){
 			%>
 >>>>>>> fxb
+=======
+>>>>>>> fcl
 			<tbody id="shopcar" >
 				<tr  align="center">
 					<td><input type="checkbox"/ >选择</td>
 					<td class="cart_td_1" width="15%" height="80px">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fcl
 						<div><img src="img/11.jpg" height="75"/></div>
 					</td>
 					<td class="cart_td_1">Java详解</td>
@@ -114,6 +123,7 @@
 					<td class="cart_td_1"><a href="#">删除</a></td>
 				</tr>
 			</tbody>
+<<<<<<< HEAD
 =======
 						<div><img src="<%=basePath%>jsps/shopcart/image/1.jpg" height="75"/></div>
 					</td>
@@ -136,6 +146,8 @@
 			 %>
 			 
 >>>>>>> fxb
+=======
+>>>>>>> fcl
 			 <tfoot>
 				<tr height="50px">
 				   <td>共计:</td>
@@ -146,9 +158,13 @@
 					</td>
 				</tr>
 <<<<<<< HEAD
+<<<<<<< HEAD
 				
 =======
 >>>>>>> fxb
+=======
+				
+>>>>>>> fcl
 			</tfoot>
 		</table>
 	</div>

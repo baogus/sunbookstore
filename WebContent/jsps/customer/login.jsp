@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<<<<<<< HEAD
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="req" value="${pageContext.request }"/>
 <c:set var="base" value="${req.scheme}://${req.serverName}:${req.serverPort}${req.contextPath }/"/>
@@ -7,6 +8,11 @@
 <html>
 <head>
  <base href="${base }">
+=======
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+>>>>>>> fcl
  		<meta charset="UTF-8">
 		<title>用户登录页面</title>
 		<style type="text/css">
@@ -84,9 +90,15 @@
 		<center></center>
 			<div id="login_main">
 				<div class="login">
+<<<<<<< HEAD
 					<form href="<c:url value='${base }jsps/customer/bottom.jsp'/>" target="bottom">
 						<h2>
 							<a href="/sunbookstore/admin/admin/login.jsp" target="bottom">管理员登陆</a>登录
+=======
+					<form href="bottom.jsp" target="bottom">
+						<h2>
+							<a href="bottom.jsp" target="bottom">管理员登陆</a>登录
+>>>>>>> fcl
 						</h2>
 						<h3>账号</h3>
 						<p><input type="text" name="name" placeholder="请输入用户名" pattern="[0-9A-Za-z]{6,16}" required/></p>
@@ -104,7 +116,11 @@
 				</div>
 			</div>
 		</center>
+<<<<<<< HEAD
 		<script type="text/javascript" src="<c:url value='${base }jsps/customer/js/jquery.min.js'/>"></script>
+=======
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+>>>>>>> fcl
 		<script type="text/javascript">
 		    $(function(){
 		        var show_num = [];
