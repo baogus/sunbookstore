@@ -1,10 +1,15 @@
 package sunbookstore.book.service;
 
+<<<<<<< HEAD
 import java.sql.SQLException;
+=======
+import java.util.List;
+>>>>>>> xr
 
 import sunbookstore.book.dao.BookDao;
 import sunbookstore.book.domin.Book;
 
+<<<<<<< HEAD
 import sunbookstore.pageBean.PageBean;
 
 public class BookService {
@@ -36,3 +41,17 @@ public class BookService {
 		return bookDao.findBookById(bid);
 	}
 }
+=======
+public class BookService {
+	BookDao bookDao  = new BookDao();
+	
+	
+	public List<Book> selectbook(int cgid) {
+		return bookDao.selectbook(cgid);
+	}
+	public List<Book> FindbookBybookname(String name) {
+		return bookDao.FindbookBybookname(name);
+		
+	}
+	}
+>>>>>>> xr

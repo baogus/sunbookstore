@@ -1,28 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="req" value="${pageContext.request }"/>
-<c:set var="base" value="${req.scheme}://${req.serverName}:${req.serverPort}${req.contextPath }/"/>
-<!DOCTYPE html>
-<html>
-<head>
- <base href="${base }">
-=======
 <!DOCTYPE html>
 <html>
 	<head>
->>>>>>> fcl
 		<meta charset="utf-8">
 		<base tarfet="top">
-=======
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<base target="top">
->>>>>>> xr
 		<title>Insert title here</title>
 		<style type="text/css">
 			*{
@@ -161,21 +143,9 @@
 		<div class="top">
 			<div class="t_login">
 				<ul>
-<<<<<<< HEAD
-<<<<<<< HEAD
-					<li><a href="<c:url value='${base }jsps/customer/login.jsp'/>" target="bottom">登录</a></li>
-					<li>|</li>
-					<li><a href="<c:url value='${base }jsps/customer/register.jsp'/>" target="bottom">注册</a></li>
-=======
 					<li><a href="login.jsp" target="bottom">登录</a></li>
 					<li>|</li>
 					<li><a href="register.jsp" target="bottom">注册</a></li>
->>>>>>> fcl
-=======
-					<li><a href="login.jsp" target="bottom">登录</a></li>
-					<li>|</li>
-					<li><a href="register.jsp" target="bottom">注册</a></li>
->>>>>>> xr
 				</ul>
 			</div>
 		</div>
@@ -188,60 +158,28 @@
 				<div class="n_icon">
 					<ul>
 						<li>
-<<<<<<< HEAD
-<<<<<<< HEAD
-							<a href="<c:url value='${base }jsps/customer/bottom.jsp'/>" target="bottom">
-=======
 							<a href="bottom.jsp" target="bottom">
->>>>>>> fcl
-=======
-							<a href="bottom.jsp" target="bottom">
->>>>>>> xr
 								<span>首页</span>
 							</a>
 						</li>
 					</ul>
 					<ul>
 						<li>
-<<<<<<< HEAD
-<<<<<<< HEAD
-							<a href="<c:url value='${base }jsps/customer/my_page.jsp'/>" target="bottom">
-=======
 							<a href="my_page.jsp" target="bottom">
->>>>>>> fcl
-=======
-							<a href="my_page.jsp" target="bottom">
->>>>>>> xr
 								<span>个人主页</span>
 							</a>
 						</li>
 					</ul>
 					<ul>
 						<li>
-<<<<<<< HEAD
-<<<<<<< HEAD
-							<a href="<c:url value='${base }jsps/customer/contact_us.jsp'/>" target="bottom">
-=======
 							<a href="contact_us.jsp" target="bottom">
->>>>>>> fcl
-=======
-							<a href="contact_us.jsp" target="bottom">
->>>>>>> xr
 								<span>联系我们</span>
 							</a>
 						</li>
 					</ul>
 					<ul>
 						<li>
-<<<<<<< HEAD
-<<<<<<< HEAD
-							<a href="<c:url value='${base }jsps/customer/about.jsp'/>" target="bottom">
-=======
 							<a href="about.jsp" target="bottom">
->>>>>>> fcl
-=======
-							<a href="about.jsp" target="bottom">
->>>>>>> xr
 								<span>关于</span>
 							</a>
 						</li>
@@ -252,24 +190,10 @@
 				<!--n_search start-->
 				<div class="n_search">
 					<div class="s_box">
-<<<<<<< HEAD
 						<a href="#" class="b_btn" target="bottom">搜索</a>
 						<input type="text" class="b_txt" placeholder="搜索你喜欢的书籍"/>
 					</div>
-<<<<<<< HEAD
-					<a href="<c:url value='${base }jsps/shopcart/queryall.jsp'/>" class="s_car" target="bottom">
-=======
 					<a href=" /sunbookstore/jsps/shopcart/queryall.jsp" class="s_car" target="bottom">
->>>>>>> fcl
-=======
-					<!-- 	<a href="/sunbookstore/FindbookBybooknameServlet" class="b_btn" target="bottom">搜索</a> -->
-					<form action="/sunbookstore/FindbookBybooknameServlet">
-						<input type="text" name="name" class="b_txt" placeholder="搜索你喜欢的书籍"/>
-						<input type="submit"  class="b_btn" value="搜索"/>
-					</form>
-					</div>
-					<a href=" /sunbookstore/jsps/shopcart/queryall.jsp" class="s_car" target="bottom">
->>>>>>> xr
 						购物车
 					</a>
 				</div>

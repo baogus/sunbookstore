@@ -1,5 +1,6 @@
 package sunbookstore.category.service;
 
+<<<<<<< HEAD
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -46,5 +47,19 @@ public class CategoryService {
 		public int findCategoryByName1(String cgname) {
 			return categoryDao.findCategoryByName1(cgname);
 		}
+=======
+import java.util.List;
+
+import sunbookstore.category.dao.CategoryDao;
+import sunbookstore.category.domin.Category;
+
+public class CategoryService {
+	CategoryDao categoryDao = new CategoryDao();
+	
+	
+	public List<Category> selectCategory() {
+		return categoryDao.selectCategory();
+	}
+>>>>>>> xr
 
 }
