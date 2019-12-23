@@ -24,10 +24,10 @@ public class DeleteCustomerServlet extends HttpServlet {
 		int cid = Integer.parseInt(request.getParameter("cid"));
 		int count = customerService.deleteCustomerByid(cid);
 		if(count >0) {
-			request.setAttribute("msg1", "删除成功");
+			request.setAttribute("msg", "删除成功");
 			request.getRequestDispatcher("/FindAllCustomerServlet?pc=1").forward(request, response);
 		}else {
-			request.setAttribute("msg1", "删除失败");
+			request.setAttribute("msg", "删除失败");
 		}
 		
 		}else {//没有登录

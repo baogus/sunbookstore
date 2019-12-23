@@ -27,13 +27,7 @@
 			<img alt="" src="<c:url value='${base }admin/img/customer.png'/>" style="height:12%; width: 12%;">用户管理</a>
 	</div>
                <ul class="menu" style="display: none;">
-                	<li><a href="<c:url value='${base }FindAllCustomerServlet?pc=1'/>">用户列表</a></li>
-                       
-                  
-           
-                   		
-                   
-                   
+                	<li><a href="<c:url value='${base }FindAllCustomerServlet?pc=1'/>">用户列表</a></li>                   
                </ul>	
 </div>
 <br>
@@ -48,9 +42,7 @@
                         <br>
                     <li><a href="<c:url value='${base }AdminBookCategoryServlet'/>" >增加书籍</a></li>
                         <br>
-                   <%--   <li><a href="<c:url value='${base }admin/book/updatebook.jsp'/>">修改图书</a></li> --%>
-                  
-                   
+                   <%--   <li><a href="<c:url value='${base }admin/book/updatebook.jsp'/>">修改图书</a></li> --%>                
                 </ul>
 </div>
 <br>
@@ -64,18 +56,15 @@
                     <li><a href="<c:url value='${base }FindAllCategoryServlet?pc=1'/>">分类列表</a></li>
   					
 				</ul>
-</div>
 <br>
 <br>
 
 <div>		
 	<div class="title" >
-	
 		<a style="color:blue;cursor:pointer;">
 			<img alt="" src="<c:url value='${base }admin/img/shezhi.png'/>" style="height:12%; width: 12%;">系统设置</a>
 	</div>
-                <ul  class="menu"  style="display: none;">
-                 
+                <ul  class="menu"  style="display: none;">                 
                     <li><a href="<c:url value='${base }admin/admin/updateadmin.jsp'/>">修改密码</a></li>
 				</ul>
 </div>

@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <base href="${base }">
+<base href="${base }">
 <meta charset="UTF-8">
 <title></title>
 <style>

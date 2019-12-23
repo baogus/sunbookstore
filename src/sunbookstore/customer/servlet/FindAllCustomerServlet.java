@@ -34,6 +34,9 @@ public class FindAllCustomerServlet extends HttpServlet {
 		PageBean<Customer> pb;
 		try {
 			pb = customerService.findAllCustomer(pc, ps);
+			
+			String msg = (String) request.getAttribute("msg");//删除时候的信息保存
+			request.setAttribute("msg", msg);
 			request.setAttribute("pb", pb);//保存到request域中
 			request.getRequestDispatcher("/admin/user/userlist.jsp").forward(request, response);
 		} catch (SQLException e) {
