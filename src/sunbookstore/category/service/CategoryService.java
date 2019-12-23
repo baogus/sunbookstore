@@ -10,7 +10,7 @@ import javax.swing.table.TableStringConverter;
 
 import exception.UserException;
 import sunbookstore.category.dao.CategoryDao;
-import sunbookstore.category.domain.Category;
+import sunbookstore.category.domin.Category;
 import sunbookstore.pageBean.PageBean;
 
 public class CategoryService {

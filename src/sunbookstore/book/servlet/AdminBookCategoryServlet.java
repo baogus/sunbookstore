@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import sunbookstore.Manager.domain.Manager;
-import sunbookstore.category.domain.Category;
+import sunbookstore.category.domin.Category;
 import sunbookstore.category.service.CategoryService;
 
 /**

@@ -12,7 +12,7 @@ import org.apache.catalina.LifecycleListener;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 import sunbookstore.book.domin.Book;
-import sunbookstore.category.domain.Category;
+import sunbookstore.category.domin.Category;
 import sunbookstore.pageBean.PageBean;
 
 public class BookDao {

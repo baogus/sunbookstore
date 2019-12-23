@@ -11,7 +11,7 @@ import java.util.List;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
-import sunbookstore.category.domain.Category;
+import sunbookstore.category.domin.Category;
 import sunbookstore.pageBean.PageBean;
 
 

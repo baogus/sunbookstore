@@ -25,7 +25,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import sunbookstore.Manager.domain.Manager;
 import sunbookstore.book.domin.Book;
 import sunbookstore.book.service.BookService;
-import sunbookstore.category.domain.Category;
+import sunbookstore.category.domin.Category;
 import sunbookstore.category.service.CategoryService;
 
 /**

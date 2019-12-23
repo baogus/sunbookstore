@@ -1,4 +1,4 @@
-package sunbookstore.category.domain;
+package sunbookstore.category.domin;
 
 public class Category {
 	private int cgid;
