@@ -34,12 +34,12 @@ public class BookDao {
 			int bid = rs.getInt(1);
 			String bname = rs.getString(2);
 			String bauthor=rs.getString(3) ;
-			double bprice=rs.getInt(4);
+			double bprice=rs.getDouble(4);
 			String bdesc=rs.getString(5);
 			String bimage=rs.getString(6);
 			String bpub=rs.getString(7);
 			int bsum=rs.getInt(9);
-			double bdiscount=rs.getInt(10);
+			double bdiscount=rs.getDouble(10);
 			book = new Book(bid,bname,bauthor,bprice,bdesc,bimage,bpub,bsum,bdiscount);
 			books.add(book);
 		}
@@ -69,12 +69,12 @@ public class BookDao {
 			int bid = rs.getInt(1);
 			String bname = rs.getString(2);
 			String bauthor=rs.getString(3) ;
-			double bprice=rs.getInt(4);
+			double bprice=rs.getDouble(4);
 			String bdesc=rs.getString(5);
 			String bimage=rs.getString(6);
 			String bpub=rs.getString(7);
 			int bsum=rs.getInt(9);
-			double bdiscount=rs.getInt(10);
+			double bdiscount=rs.getDouble(10);
 			bookname = new Book(bid,bname,bauthor,bprice,bdesc,bimage,bpub,bsum,bdiscount);
 			booknames.add(bookname);
 		}
@@ -84,6 +84,38 @@ public class BookDao {
 			e.printStackTrace();
 		}
 		return booknames;
+   }
+ //按图书编号查找
+	public List<Book> FindbookBybid(int bid){
+		Book bookid=null;
+		List<Book> bookids = new ArrayList<Book>();
+		
+		try {
+		conn = dataSource.getConnection();
+		String  sql = "select * from book where bid=?";
+		pstm = conn.prepareStatement(sql);
+		pstm.setInt(1, bid);	
+		rs = pstm.executeQuery();
+		while(rs.next()) {
+			String bname = rs.getString(2);
+			String bauthor=rs.getString(3) ;
+			double bprice=rs.getDouble(4);
+			String bdesc=rs.getString(5);
+			String bimage=rs.getString(6);
+			String bpub=rs.getString(7);
+			int bsum=rs.getInt(9);
+			double bdiscount=rs.getDouble(10);
+			int cgid=rs.getInt(8);
+			double brp=bprice*bdiscount*0.1;
+			bookid = new Book(bname,bauthor,bprice,bdesc,bimage,bpub,bsum,bdiscount,cgid);
+			bookids.add(bookid);
+		}
+		return bookids;
+	    }catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		return bookids;
    }
 }
 

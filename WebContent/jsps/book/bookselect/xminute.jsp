@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -83,17 +87,17 @@ a{
 </head>
 <body>
 <table>
- <c:forEach items="${books }" var="bookcategory">
+ <c:forEach items="${bookids }" var="bookid">
  
     <tr>
-       <td ><img width="200px" height="200px" src="${bookcategory.bimage }"></td>
+       <td ><img width="200px" height="200px" src="${bookid.bimage }"></td>
        <td>
-         <div>${bookcategory.bname }</div>
-         <div>${bookcategory.bdesc}</div>
-         <div>${bookcategory.bauthor}</div>
-         <div>${bookcategory.bpub}</div>
-         <div>${bookcategory.bprice}</div>
-         <div>${bookcategory.bdiscount}</div>      
+         <div>${bookid.bname }</div>
+         <div>${bookid.bdesc}</div>
+         <div>${bookid.bauthor}</div>
+         <div>${bookid.bpub}</div>
+         <div>${bookid.bprice}</div>
+         <div>${bookid.bdiscount}</div>      
          
            <ul class = "nav">
               <li class = "list-item">
@@ -106,8 +110,6 @@ a{
 						<input class="add" name="" type="button" value="+" />
 	           </li>      
           </ul>
-       
-
        </tr>
  
   </c:forEach>

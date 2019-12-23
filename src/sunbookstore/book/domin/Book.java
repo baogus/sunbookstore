@@ -10,6 +10,7 @@ public class Book {
    private String bpub;
    private int bsum;
    private double bdiscount;
+   private int cgid;
    
 public Book() {
 	// TODO Auto-generated constructor stub
@@ -27,6 +28,20 @@ public Book(int bid, String bname, String bauthor, double bprice, String bdesc, 
 	this.bsum = bsum;
 	this.bdiscount = bdiscount;
 	
+}
+public Book(String bname, String bauthor, double bprice, String bdesc, String bimage, String bpub, int bsum,
+		double bdiscount,int cgid) {
+	super();
+	
+	this.bname = bname;
+	this.bauthor = bauthor;
+	this.bprice = bprice;
+	this.bdesc = bdesc;
+	this.bimage = bimage;
+	this.bpub = bpub;
+	this.bsum = bsum;
+	this.bdiscount = bdiscount;
+	this.cgid=cgid;
 }
 public int getBid() {
 	return bid;
@@ -82,6 +97,15 @@ public double getBdiscount() {
 public void setBdiscount(double bdiscount) {
 	this.bdiscount = bdiscount;
 }
+public int getCgid() {
+	return cgid;
+}
+public void setCgid(int cgid) {
+	this.cgid = cgid;
+}
 
-   
+public double bookReallyprice() {
+	double brp=bdiscount*bprice;
+	return brp;
+}   
 }

@@ -16,4 +16,8 @@ public class BookService {
 		return bookDao.FindbookBybookname(name);
 		
 	}
+	public List<Book> FindbookBybid(int bid){
+		return bookDao.FindbookBybid(bid);
+		
+	}
 	}
