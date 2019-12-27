@@ -25,10 +25,10 @@ public class FindbookBybidServlet extends HttpServlet {
 		int bid = Integer.parseInt(request.getParameter("bid"));		
 		List<Book> bookids=bookService.FindbookBybid(bid);
 		if(bookids.isEmpty()){
-			request.setAttribute("msg", "meiyoushu");
+			request.setAttribute("msg", "没有任何书籍信息");
 		}
 		request.getSession().setAttribute("bookids", bookids);
-		request.getRequestDispatcher("/jsps/book/bookselect/xminute.jsp").forward(request, response);
+		request.getRequestDispatcher("OrderbookcountServlet?bid="+bid).forward(request, response);
 	}
 
 

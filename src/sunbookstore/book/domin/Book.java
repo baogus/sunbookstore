@@ -11,10 +11,14 @@ public class Book {
    private int bsum;
    private double bdiscount;
    private int cgid;
-   
-public Book() {
-	// TODO Auto-generated constructor stub
+   private double brp;
+public double getBrp() {
+	return brp;
 }
+public void setBrp(double brp) {
+	this.brp = brp;
+}
+
 public Book(int bid, String bname, String bauthor, double bprice, String bdesc, String bimage, String bpub, int bsum,
 		double bdiscount) {
 	super();
@@ -27,6 +31,7 @@ public Book(int bid, String bname, String bauthor, double bprice, String bdesc, 
 	this.bpub = bpub;
 	this.bsum = bsum;
 	this.bdiscount = bdiscount;
+	this.brp=brp;
 	
 }
 public Book(String bname, String bauthor, double bprice, String bdesc, String bimage, String bpub, int bsum,
@@ -42,6 +47,23 @@ public Book(String bname, String bauthor, double bprice, String bdesc, String bi
 	this.bsum = bsum;
 	this.bdiscount = bdiscount;
 	this.cgid=cgid;
+	
+}
+public Book(String bname, String bauthor, double bprice, String bdesc, String bimage, String bpub, int bsum,
+		double bdiscount,int cgid,double brp){
+	super();
+	
+	this.bname = bname;
+	this.bauthor = bauthor;
+	this.bprice = bprice;
+	this.bdesc = bdesc;
+	this.bimage = bimage;
+	this.bpub = bpub;
+	this.bsum = bsum;
+	this.bdiscount = bdiscount;
+	this.cgid=cgid;
+	this.brp=brp;
+
 }
 public int getBid() {
 	return bid;
@@ -103,9 +125,5 @@ public int getCgid() {
 public void setCgid(int cgid) {
 	this.cgid = cgid;
 }
-
-public double bookReallyprice() {
-	double brp=bdiscount*bprice;
-	return brp;
-}   
+  
 }

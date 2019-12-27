@@ -1,4 +1,5 @@
-
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.Map"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -25,46 +26,32 @@
 </style>
 </head>
 <body>
-<!--  <table width="100%">
-  <tr>
-   <td>
-    <div>
-       <a href="xminute.jsp" target="bottom">
-       <img src="images/xskdjs937.jpg" width="200" height="200" /> </a> 
-    </div>
-    
-    <div>
-       <a href="xminute.jsp" target="bottom">书名: </a>          
-    </div>
-    <div>
-            作者：      
-    </div>
-    <div>
-             价格：    
-    </div>    
-   </td>   
- </tr> -->
-  <table width="100%"> 
-   <c:forEach items="${books }" var="bookcategory">
+  <table>   
     <tr>    
+    <c:forEach items="${books }" var="book">
    <td>
     <div>
-       <a href="<%=basePath%>FindbookBybidServlet?bid=${bookcategory.bid }" target="bottom" >
-       <img width="200px" height="200px" src="${bookcategory.bimage }"></a> 
+       <a href="<%=basePath%>FindbookBybidServlet?bid=${book.bid }" target="bottom" >
+       <img width="200px" height="200px" src="${book.bimage }"></a> 
     </div>
     
     <div>
-       <a href="FindbookBybidServlet?bid=${bookcategory.bid }" target="bottom">${bookcategory.bname } </a>          
+       <a href="FindbookBybidServlet?bid=${book.bid }" target="bottom">${book.bname } </a>          
     </div>
     <div>
-         ${bookcategory.bauthor } 
+         ${book.bauthor } 
     </div>
-    <div>
-         ${bookcategory.bprice }
-    </div>    
-   </td>   
-    </tr>		
-	</c:forEach>				
+    <div>        
+         <del><font color="gray">¥${book.bprice }</font></del>
+         <font color="red" size="4">
+         <fmt:formatNumber type="number" value="  ¥${book.bprice*book.bdiscount*0.1 }" pattern="0.00" maxFractionDigits="2"/></font>
+         
+   </div>    
+   </td>  
+  	 
+   </c:forEach>		
+    </tr> 	
+			
 </table>    　
 
 

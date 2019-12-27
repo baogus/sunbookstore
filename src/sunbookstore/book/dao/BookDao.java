@@ -39,6 +39,7 @@ public class BookDao {
 			String bimage=rs.getString(6);
 			String bpub=rs.getString(7);
 			int bsum=rs.getInt(9);
+			
 			double bdiscount=rs.getDouble(10);
 			book = new Book(bid,bname,bauthor,bprice,bdesc,bimage,bpub,bsum,bdiscount);
 			books.add(book);
@@ -75,6 +76,7 @@ public class BookDao {
 			String bpub=rs.getString(7);
 			int bsum=rs.getInt(9);
 			double bdiscount=rs.getDouble(10);
+			
 			bookname = new Book(bid,bname,bauthor,bprice,bdesc,bimage,bpub,bsum,bdiscount);
 			booknames.add(bookname);
 		}
@@ -106,7 +108,7 @@ public class BookDao {
 			int bsum=rs.getInt(9);
 			double bdiscount=rs.getDouble(10);
 			int cgid=rs.getInt(8);
-			double brp=bprice*bdiscount*0.1;
+			
 			bookid = new Book(bname,bauthor,bprice,bdesc,bimage,bpub,bsum,bdiscount,cgid);
 			bookids.add(bookid);
 		}

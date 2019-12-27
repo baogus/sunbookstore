@@ -22,7 +22,7 @@ public class SelectCategoryServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=UTF-8");
 		List<Category> categories = categoryService.selectCategory();
-		request.setAttribute("categories", categories);
+		request.getSession().setAttribute("categories", categories);
 		request.getRequestDispatcher("/jsps/book/bookselect/left.jsp").forward(request, response);
 		
 	}
