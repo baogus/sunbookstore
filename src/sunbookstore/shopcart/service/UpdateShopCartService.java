@@ -10,6 +10,10 @@ public class UpdateShopCartService {
 		return shopCartDao.shop_BookISExist(sid);
 	}
 	
+	public int queryBcountById(int bid) {
+		return shopCartDao.queryBcountById(bid);
+	}
+	
 	public int updateShop_Book(Shop_Book shop_Book) {
 		return shopCartDao.updateShop_Book(shop_Book);
 	}

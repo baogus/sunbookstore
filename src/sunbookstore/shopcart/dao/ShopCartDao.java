@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
+import com.sun.org.apache.regexp.internal.recompile;
 
+import sunbookstore.shopcart.domin.PageBean;
 import sunbookstore.shopcart.domin.Shop;
 import sunbookstore.shopcart.domin.Shop_Book;
 
@@ -18,7 +20,40 @@ public class ShopCartDao {
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	ComboPooledDataSource dataSource = new ComboPooledDataSource();
-
+	
+	//查找书库中的书籍的数目
+		public int queryBcountById(int bid) {
+			int i = -1;
+			try {
+				conn = dataSource.getConnection();
+				String sql = "select bcount from book where bid=?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, bid);
+				rs = pstmt.executeQuery();
+				while (rs.next()) {
+					i = rs.getInt(1);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					if (rs != null)
+						rs.close();
+					if (pstmt != null)
+						pstmt.close();
+					if (conn != null)
+						conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			return i;
+		}
+	
 	// 根据bid查找购物车中是不是有同样得一本书
 	public int queryShop_BookById(Shop_Book shop_Book) {
 		int i = -1;
@@ -145,7 +180,35 @@ public class ShopCartDao {
 		}
 		return i;
 	}
-
+	
+	//删除购物车中的物品
+	public int deleteShop_BookById(int sid) {
+		int i = -1;
+		try {
+			conn = dataSource.getConnection();
+			String sql = "delete from shop_book where sid=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, sid);
+			i = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return i;
+	}
+	
 	// 向shop_book中添加书籍的信息
 	public int insertShop_Book(Shop_Book shop_Book) {
 		int i = -1;
@@ -287,6 +350,93 @@ public class ShopCartDao {
 		}
 
 	}
+	//根据购物车编号查询购物车中的总数据量
+	public int getTotalCount(int sid) {
+		int total = 0;
+		try {
+			conn = dataSource.getConnection();
+			String sql = "select count(*) from shop_book where sid=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, sid);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				total = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return total;
+	}
+	
+	//根据购物车编号联合多表分页查询shopcart
+		public PageBean<Shop> queryShopCartByPage(int sid,PageBean<Shop> pageBean) {
+			PageBean<Shop> pageBean1 = new PageBean<Shop>();
+			List<Shop> shops = new ArrayList<>();
+			Shop shop = null;
+			int tr = shop_BookISExist(sid);
+			int pc = pageBean.getPc();
+			int ps = pageBean.getPs();
+				try {
+					conn = dataSource.getConnection();
+					String sql = "select * from (select rownum r,t.* from (select shop_book.bid,bname,bprice,bimage,bdiscount,sbnum from shop_book,book where sid=? and shop_book.bid = book.bid) t) s where r>=(?-1)*?+1 and r<=?*?";
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setInt(1, sid);
+					pstmt.setInt(2, pc);
+					pstmt.setInt(3, ps);
+					pstmt.setInt(4, pc);
+					pstmt.setInt(5, ps);
+					rs = pstmt.executeQuery();
+					while (rs.next()) {
+						int bid = rs.getInt("bid");
+						String bname = rs.getString("bname");
+						int bprice = rs.getInt("bprice");
+						String bimage = rs.getString("bimage");
+						int bdiscount = rs.getInt("bdiscount");
+						int sbnum = rs.getInt("sbnum");
+						shop = new Shop(sid,bid, sbnum, bname, bprice, bimage, bdiscount);
+						shops.add(shop);
+					}
+					pageBean1.setTr(tr);
+					pageBean1.setPc(pc);
+					pageBean1.setPs(ps);
+					pageBean1.setBeanList(shops);
+					return pageBean1;
+				} catch (SQLException e) {
+					e.printStackTrace();
+					return null;
+				} catch (Exception e) {
+					e.printStackTrace();
+					return null;
+				} finally {
+					try {
+						if (rs != null)
+							rs.close();
+						if (pstmt != null)
+							pstmt.close();
+						if (conn != null)
+							conn.close();
+					} catch (SQLException e) {
+						e.printStackTrace();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			}
 	
 	//根据购物车编号联合多表查询shopcart
 	public List<Shop> queryShopCart(int sid) {

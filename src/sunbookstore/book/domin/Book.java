@@ -11,7 +11,7 @@ public class Book {
 	 */
 	private int bid;
 	private String bname;
-	private  int bsum;
+	private  int bcount;
 	private String bauthor;
 	private int bprice;
 	private String bdesc;
@@ -23,11 +23,11 @@ public class Book {
 		
 	}
 	
-	public Book(int bid, String bname, int bsum, String bauthor, int bprice, String bdesc, String bimage, String bpub,
+	public Book(int bid, String bname, int bcount, String bauthor, int bprice, String bdesc, String bimage, String bpub,
 			int cgid,double bdiscount) {
 		this.bid = bid;
 		this.bname = bname;
-		this.bsum = bsum;
+		this.bcount = bcount;
 		this.bauthor = bauthor;
 		this.bprice = bprice;
 		this.bdesc = bdesc;
@@ -36,18 +36,18 @@ public class Book {
 		this.cgid = cgid;
 		this.bdiscount = bdiscount;
 	}
-	public Book(int bid, String bname, int bsum, int bprice, String bimage,int bdiscount) {
+	public Book(int bid, String bname, int bcount, int bprice, String bimage,int bdiscount) {
 		this.bid = bid;
 		this.bname = bname;
-		this.bsum = bsum;
+		this.bcount = bcount;
 		this.bprice = bprice;
 		this.bimage = bimage;
 		this.bdiscount = bdiscount;
 	}
-	public Book( String bname, int bsum, int bprice, String bimage,int bdiscount) {
+	public Book( String bname, int bcount, int bprice, String bimage,int bdiscount) {
 		
 		this.bname = bname;
-		this.bsum = bsum;
+		this.bcount = bcount;
 		this.bprice = bprice;
 		this.bimage = bimage;
 		this.bdiscount = bdiscount;
@@ -70,11 +70,11 @@ public class Book {
 	public void setBname(String bname) {
 		this.bname = bname;
 	}
-	public int getBsum() {
-		return bsum;
+	public int getBcount() {
+		return bcount;
 	}
-	public void setBsum(int bsum) {
-		this.bsum = bsum;
+	public void setBcount(int bcount) {
+		this.bcount = bcount;
 	}
 	public String getBauthor() {
 		return bauthor;

@@ -13,7 +13,7 @@ import sunbookstore.order.service.DeleteOrderService;
 public class DeleteOrderServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int cid = Integer.parseInt(request.getParameter("cid"));
-		int oid = Integer.parseInt(request.getParameter("oid"));
+		Double oid = Double.parseDouble(request.getParameter("oid"));
 		DeleteOrderService deleteOrderService =  new DeleteOrderService();
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=UTF-8");

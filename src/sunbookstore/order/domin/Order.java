@@ -1,22 +1,26 @@
 package sunbookstore.order.domin;
 
 public class Order {
-	private int oid;
+	private double oid;
 	private int cid;
 	private String ostate;
 	public Order() {
 		
 	}
-	public Order(int oid, int cid) {
+	public Order(double oid, int cid) {
 		this.oid = oid;
 		this.cid = cid;
 	}
-	public Order(int oid, int cid, String ostate) {
+	public Order(double oid, String ostate) {
+		this.oid = oid;
+		this.ostate = ostate;
+	}
+	public Order(double oid, int cid, String ostate) {
 		this.oid = oid;
 		this.cid = cid;
 		this.ostate = ostate;
 	}
-	public int getOid() {
+	public double getOid() {
 		return oid;
 	}
 	public void setOid(int oid) {

@@ -5,7 +5,7 @@ import java.sql.Date;
 public class Orders {
 	private int cid;
 	private int bid;
-	private int oid;
+	private double oid;
 	private Date otime;
 	private String bimage;
 	private String bname;
@@ -15,9 +15,10 @@ public class Orders {
 	private String ostate;
 	private int onum;
 	private int osubtotal;
+	private int bdiscount;
 	public Orders() {
 	}
-	public Orders(int bid, int oid, Date otime, String bimage, String bname, int bprice, String cname,
+	public Orders(int bid, double oid, Date otime, String bimage, String bname, int bprice, String cname,
 			String caddress, String ostate,int onum, int osubtotal) {
 		this.bid = bid;
 		this.oid = oid;
@@ -31,8 +32,9 @@ public class Orders {
 		this.onum = onum;
 		this.osubtotal = osubtotal;
 	}
-	public Orders(int oid, Date otime, String bimage, String bname, int bprice, String cname,
-			String caddress,String ostate, int onum, int osubtotal) {
+	public Orders(int bid, double oid, Date otime, String bimage, String bname, int bprice, String cname,
+			String caddress, int onum, int osubtotal,int bdiscount,String ostate) {
+		this.bid = bid;
 		this.oid = oid;
 		this.otime = otime;
 		this.bimage = bimage;
@@ -40,11 +42,12 @@ public class Orders {
 		this.bprice = bprice;
 		this.cname = cname;
 		this.caddress = caddress;
-		this.ostate = ostate;
 		this.onum = onum;
 		this.osubtotal = osubtotal;
+		this.bdiscount = bdiscount;
+		this.ostate = ostate;
 	}
-	public Orders(int cid, int bid, int oid, Date otime, String bimage, String bname, int bprice, String cname,
+	public Orders(int cid, int bid, double oid, Date otime, String bimage, String bname, int bprice, String cname,
 			String caddress, String ostate, int onum, int osubtotal) {
 		this.cid = cid;
 		this.bid = bid;
@@ -58,6 +61,12 @@ public class Orders {
 		this.ostate = ostate;
 		this.onum = onum;
 		this.osubtotal = osubtotal;
+	}
+	public int getBdiscount() {
+		return bdiscount;
+	}
+	public void setBdiscount(int bdiscount) {
+		this.bdiscount = bdiscount;
 	}
 	public String getOstate() {
 		return ostate;
@@ -77,10 +86,10 @@ public class Orders {
 	public void setBid(int bid) {
 		this.bid = bid;
 	}
-	public int getOid() {
+	public double getOid() {
 		return oid;
 	}
-	public void setOid(int oid) {
+	public void setOid(double oid) {
 		this.oid = oid;
 	}
 	public Date getOtime() {
