@@ -12,6 +12,7 @@ import java.util.List;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
+import sunbookstore.book.domin.Book;
 import sunbookstore.order.domin.Book_Order;
 import sunbookstore.order.domin.Order;
 import sunbookstore.order.domin.Orders;
@@ -22,6 +23,36 @@ public class OrderDao {
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	ComboPooledDataSource dataSource = new ComboPooledDataSource();
+	
+	//修改书籍的库存信息
+		public int updateBookBcount(Book book) {
+			int i = -1;
+			try {
+			
+				conn = dataSource.getConnection();
+				String sql = "update book set bcount -=? where bid = ?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, book.getBcount());
+				pstmt.setInt(2,book.getBid());
+				
+				i = pstmt.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					if (rs != null)rs.close();
+					if (pstmt != null)pstmt.close();
+					if (conn != null)conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			return i;
+		}
 	
 	//修改订单中的状态信息
 	public int updateOrderOstate(Order order) {
